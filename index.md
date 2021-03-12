@@ -10,8 +10,7 @@
   <tr>
     <td width= "75%">
       <h1>思睿Sirui</h1>
-      <p><b>酷安@思睿Sirui</b></p>
-      <p><b>B站@思睿Sirui</b></p>
+      <p><b>酷安@思睿Sirui  B站@思睿Sirui</b></p>
       <p><b>邮箱: 843991410@qq . com</b></p>
       <p><b>目前玩的游戏：崩坏3，原神</b></p>
     </td>
