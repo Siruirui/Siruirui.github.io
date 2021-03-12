@@ -11,3 +11,4 @@
     </td>
   </tr>
 </table>
+<img src="/bg.jpg" width="100%">
