@@ -3,7 +3,7 @@
 
 <table border="0"> 
   <tr>
-    <td width= "0%">
+    <td width= "20%">
       <h1>思睿Sirui</h1>
       <p><b>一枚学生，喜欢音乐和数码</b></p>
       <p><b>酷安@思睿Sirui，B站@思睿Sirui</b></p>
