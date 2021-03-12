@@ -8,7 +8,7 @@
 
 <table border="0"> 
   <tr>
-    <td width= "75%">
+    <td width= "100%">
       <h1>思睿Sirui</h1>
       <p><b>酷安@思睿Sirui，B站@思睿Sirui</b></p>
       <p><b>邮箱: 843991410@qq.com</b></p>
