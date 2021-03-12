@@ -12,3 +12,4 @@
     <img src="/bg.png" width="100%">
   </tr>
 </table>
+<img src="/bg.png" width="100%">
