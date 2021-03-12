@@ -5,9 +5,9 @@
   <tr>
     <td width= "50%">
       <h1>思睿Sirui</h1>
+      <p><b>一枚学生，喜欢音乐和数码</b></p>
       <p><b>酷安@思睿Sirui，B站@思睿Sirui</b></p>
       <p><b>邮箱: 843991410@qq.com</b></p>
-      <p><b>喜欢音乐和数码，欢迎交流</b></p>
     </td>
   </tr>
 </table>
