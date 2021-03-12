@@ -9,6 +9,6 @@
       <p><b>酷安@思睿Sirui，B站@思睿Sirui</b></p>
       <p><b>邮箱: 843991410@qq.com</b></p>
     </td>
+    <img src="/bg.png" width="100%">
   </tr>
 </table>
-<img src="/bg.png" width="100%">
