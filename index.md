@@ -1,4 +1,6 @@
 # 欢迎来到思睿Sirui的个人主页！
+**酷安[@思睿Sirui](http://www.coolapk.com/u/3189548)，B站[@思睿Sirui](https://space.bilibili.com/34344911/)**
+**邮箱: 843991410@qq.com**
 <table border="0"> 
   <tr>
     <td width= "75%">
@@ -12,7 +14,4 @@
     </td>
   </tr>
 </table>
-**酷安[@思睿Sirui](http://www.coolapk.com/u/3189548)，B站[@思睿Sirui](https://space.bilibili.com/34344911/)**
-
-**邮箱: 843991410@qq.com**
 <img src="/bg.png" width="100%">
