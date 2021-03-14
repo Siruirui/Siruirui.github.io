@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>MD常用语法学习笔记 - 思睿SiruiのBlog</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="思睿Sirui的博客Blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="这是我的第一篇Blog，为了将自己的个人网站做得更加美观以及更好地创作Blog，我决定先学习一番MD的基础语法，将笔记简单记在我的Blog中。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MD常用语法学习笔记">
+<meta property="og:url" content="http://siruis.top/%E7%AC%94%E8%AE%B0/2021-03/MD%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="思睿SiruiのBlog">
+<meta property="og:description" content="这是我的第一篇Blog，为了将自己的个人网站做得更加美观以及更好地创作Blog，我决定先学习一番MD的基础语法，将笔记简单记在我的Blog中。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://o.acgpic.net/img-original/img/2021/03/12/01/51/52/88382859_p0.jpg">
+<meta property="article:published_time" content="2021-03-13T19:03:46.000Z">
+<meta property="article:modified_time" content="2021-03-14T09:59:42.711Z">
+<meta property="article:author" content="思睿Sirui">
+<meta property="article:tag" content="学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://o.acgpic.net/img-original/img/2021/03/12/01/51/52/88382859_p0.jpg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1615716522936">
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://i0.hdslb.com/bfs/album/f8e25f535fc664b29adfdc709398c433ebc79315.png)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="思睿Sirui" class="mdui-btn mdui-btn-icon"><img src="https://i0.hdslb.com/bfs/album/ed5f128f99b6f02a95f7ea484a23f2d1a84acd36.jpg" alt="思睿Sirui"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="思睿Sirui">
+            <img src="https://i0.hdslb.com/bfs/album/ed5f128f99b6f02a95f7ea484a23f2d1a84acd36.jpg" alt="思睿Sirui" alt="思睿Sirui">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>2</div>
+        <div><span>标签</span>1</div>
+        <div><span>分类</span>1</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://www.baidu.com/search?q=site:nexmoe.com" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://jq.qq.com/?_wv=1027&k=5CfKHun" target="_blank" mdui-tooltip="{content: 'QQ群'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/20238211" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/nexmoe/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/笔记/">笔记</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">最新文章</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/%E7%AC%94%E8%AE%B0/2021-03/MD%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">MD常用语法学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/uncategorized/2021-03/Sirui/">欢迎参观思睿SiruiのBlog</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2021 思睿Sirui
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 56.25%;"> 
+          <img data-src="https://i0.hdslb.com/bfs/album/c453c9bd0a3dd7d0886bc3c46031b462058124e4.png" data-sizes="auto" alt="MD常用语法学习笔记" class="lazyload">
+          <h1>MD常用语法学习笔记</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年03月14日</a>
+    <a><i class="nexmoefont icon-areachart"></i>758 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+  </div>
+
+  <article>
+    <p>这是我的第一篇Blog，为了将自己的个人网站做得更加美观以及更好地创作Blog，我决定先学习一番MD的基础语法，将笔记简单记在我的Blog中。<span id="more"></span></p>
+<p>需要注意的是，使用+、-、*、.及&gt;的基本标记时，后面常带有一个空格用于分割标记与内容，使用时记得带上空格哦！开始记笔记吧</p>
+<h3 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h3><pre><code class="markdown"># 一级标题
+
+## 二级标题
+</code></pre>
+<p>n级标题只要在开头加上n个#即可，至多六级标题</p>
+<h3 id="二、列表"><a href="#二、列表" class="headerlink" title="二、列表"></a>二、列表</h3><h4 id="1-无序列表"><a href="#1-无序列表" class="headerlink" title="1. 无序列表"></a>1. 无序列表</h4><pre><code class="markdown">//示例一
++ a
++ b
++ c
+//示例二
+- j
+- k
+- l
+//示例三
+* x
+* y
+* z
+</code></pre>
+<p>三种符号效果相同</p>
+<h4 id="2-有序列表"><a href="#2-有序列表" class="headerlink" title="2. 有序列表"></a>2. 有序列表</h4><pre><code class="markdown">//正常形式
+1. abc
+2. jkl
+3. xyz
+//乱序形式
+3. cba
+5. lkj
+2. zyx
+</code></pre>
+<p>乱序的情况下会仍然以正常顺序显示</p>
+<p>列表可以嵌套，通过缩进可以调整列表的层级</p>
+<h3 id="三、引用说明"><a href="#三、引用说明" class="headerlink" title="三、引用说明"></a>三、引用说明</h3><pre><code class="markdown">&gt; 引用内容、说明内容，理论上可以放入任何内容
+</code></pre>
+<p>同样，引用说明也可以嵌套使用</p>
+<h3 id="四、代码块"><a href="#四、代码块" class="headerlink" title="四、代码块"></a>四、代码块</h3><pre><code class="markdown">现在外边一圈的框框就是代码块啦！
+</code></pre>
+<p>主要为展示代码使用，快捷键Ctrl+Shift+K，个人感觉这个快捷键很好用！</p>
+<h3 id="五、链接"><a href="#五、链接" class="headerlink" title="五、链接"></a>五、链接</h3><h4 id="1-行内式"><a href="#1-行内式" class="headerlink" title="1. 行内式"></a>1. 行内式</h4><pre><code class="markdown">欢迎参观[思睿SiruiのBlog](http://siruis.top)
+</code></pre>
+<h4 id="2-参数式"><a href="#2-参数式" class="headerlink" title="2. 参数式"></a>2. 参数式</h4><pre><code class="markdown">[思睿Sirui]: http://siruis.top &quot;思睿SiruiのBlog&quot;
+当前正在浏览：[思睿Sirui]的MD语法学习笔记
+</code></pre>
+<p>“说明”也可换用&#39;&#39;、（），链接可以加上&lt;&gt;</p>
+<p>当前正在浏览：<a href="http://siruis.top/" title="思睿SiruiのBlog">思睿Sirui</a>的MD语法学习笔记</p>
+<h3 id="六、图片"><a href="#六、图片" class="headerlink" title="六、图片"></a>六、图片</h3><h4 id="1-行内式-1"><a href="#1-行内式-1" class="headerlink" title="1. 行内式"></a>1. 行内式</h4><pre><code class="markdown">![light.jpg](https://o.acgpic.net/img-original/img/2021/03/12/01/51/52/88382859_p0.jpg) &quot;随便放张图&quot;
+</code></pre>
+<p>与链接类似，只在前面多了个!</p>
+<h4 id="2-参数式-1"><a href="#2-参数式-1" class="headerlink" title="2. 参数式"></a>2. 参数式</h4><pre><code class="markdown">[light.jpg]: https://o.acgpic.net/img-original/img/2021/03/12/01/51/52/88382859_p0.jpg
+![light.jpg]
+</code></pre>
+<p>同样，图片也可以改用其他符号</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://o.acgpic.net/img-original/img/2021/03/12/01/51/52/88382859_p0.jpg" alt="light.jpg" class="lazyload"></p>
+<h3 id="七、分割线"><a href="#七、分割线" class="headerlink" title="七、分割线"></a>七、分割线</h3><pre><code class="markdown">---
+- - -
+***
+* * *
+___
+_ _ _
+</code></pre>
+<p>3个以上的*，-或_即可，可以带空格</p>
+<hr>
+<h3 id="八、其他"><a href="#八、其他" class="headerlink" title="八、其他"></a>八、其他</h3><h4 id="1-强调字体"><a href="#1-强调字体" class="headerlink" title="1. 强调字体"></a>1. 强调字体</h4><pre><code class="markdown">*倾斜*
+_倾斜_
+**加粗**
+__加粗__
+***倾斜加粗***
+___倾斜加粗___
+</code></pre>
+<p>一个*或者一个_就是<em>倾斜</em>，两个则是<strong>加粗</strong>，三个即为<em><strong>倾斜加粗</strong></em></p>
+<h4 id="2-转义"><a href="#2-转义" class="headerlink" title="2. 转义"></a>2. 转义</h4><pre><code class="markdown">\\
+\*
+\+
+\-
+\&#39;
+\_
+</code></pre>
+<p>这里就和很多语言一样了，在前面加上\就可以了</p>
+<h4 id="3-删除线"><a href="#3-删除线" class="headerlink" title="3. 删除线"></a>3. 删除线</h4><pre><code class="markdown">~~删除~~
+</code></pre>
+<p>这就是<del>文艺复兴</del>返璞归真吗？爱了爱了</p>
+<h3 id="九、表格"><a href="#九、表格" class="headerlink" title="九、表格"></a>九、表格</h3><pre><code class="markdown">//示例一
+|111|222|333|
+|:-|:-:|-:|
+|123|456|789|
+|abc|jkl|xyz|
+|思睿|Sirui|Markdown|
+//示例二
+|111|222|333|
+|:---|:---:|---:|
+|123|456|789|
+|abc|jkl|xyz|
+|思睿|Sirui|Markdown|
+//示例三
+111|222|333
+-:|:---:|:-
+123|456|789
+abc|jkl|xyz
+思睿|Sirui|Markdown
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">111</th>
+<th align="center">222</th>
+<th align="right">333</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">123</td>
+<td align="center">456</td>
+<td align="right">789</td>
+</tr>
+<tr>
+<td align="left">abc</td>
+<td align="center">jkl</td>
+<td align="right">xyz</td>
+</tr>
+<tr>
+<td align="left">思睿</td>
+<td align="center">Sirui</td>
+<td align="right">Markdown</td>
+</tr>
+</tbody></table>
+<p>其中冒号表示对齐方式，在左边即左对齐，右边则为右对齐，两边都有即为居中</p>
+<hr>
+<blockquote>
+<p>至此，MD常用语法学习完毕，还有一些内容等有需要的时候再来摸索摸索吧。</p>
+<p>希望我能在未来善加使用MD语法，让自己的Blog成为一份优秀好用的名片！</p>
+</blockquote>
+
+  </article>
+
+  
+    
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>思睿Sirui<br>
+    <strong>本文链接：</strong><a href="http://siruis.top/%E7%AC%94%E8%AE%B0/2021-03/MD%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="http:&#x2F;&#x2F;siruis.top&#x2F;%E7%AC%94%E8%AE%B0&#x2F;2021-03&#x2F;MD%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;siruis.top&#x2F;%E7%AC%94%E8%AE%B0&#x2F;2021-03&#x2F;MD%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '80b2453b6d5f37ad6225',
+        clientSecret: '43e99fa852795c9a7b3eb924b2558c64b84bbdeb',
+        id: window.location.pathname,
+        repo: 'nexmoe.github.io',
+        owner: 'nexmoe',
+        admin: 'nexmoe'
+    })
+    gitalk.render('gitalk')
+</script>
+</section>
+  </div>
+</div>
+        <div class="nexmoe-post-right">
+          <div class="nexmoe-fixed">
+            <div class="nexmoe-tool">
+              <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+ <script src="/js/app.js?v=1615716522938"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+  
+
+
+
+
+
+</body>
+
+</html>
