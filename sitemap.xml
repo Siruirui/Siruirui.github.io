@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://siruis.top/log.html</loc>
+    
+    <lastmod>2021-03-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://siruis.top/about.html</loc>
+    
+    <lastmod>2021-03-29</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://siruis.top/2021-03/MD_Study/</loc>
     
     <lastmod>2021-03-27</lastmod>
@@ -12,13 +26,6 @@
     <loc>http://siruis.top/PY.html</loc>
     
     <lastmod>2021-03-26</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://siruis.top/about.html</loc>
-    
-    <lastmod>2021-03-18</lastmod>
     
   </url>
   
