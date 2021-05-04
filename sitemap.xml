@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://siruis.top/PY.html</loc>
+    
+    <lastmod>2021-05-04</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://siruis.top/about.html</loc>
     
     <lastmod>2021-04-07</lastmod>
@@ -30,13 +37,6 @@
   </url>
   
   <url>
-    <loc>https://siruis.top/PY.html</loc>
-    
-    <lastmod>2021-04-05</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://siruis.top/2021-03/Sirui/</loc>
     
     <lastmod>2021-03-17</lastmod>
@@ -53,7 +53,7 @@
 
   <url>
     <loc>https://siruis.top/</loc>
-    <lastmod>2021-04-13</lastmod>
+    <lastmod>2021-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -61,7 +61,7 @@
   
   <url>
     <loc>https://siruis.top/tags/%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2021-04-13</lastmod>
+    <lastmod>2021-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -70,7 +70,7 @@
   
   <url>
     <loc>https://siruis.top/categories/%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2021-04-13</lastmod>
+    <lastmod>2021-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
