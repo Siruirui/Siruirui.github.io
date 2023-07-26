@@ -1,0 +1,272 @@
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>body{
+    /* background: url(https://cdn.staticaly.com/gh/Siruirui/Siruirui.github.io@gh-pages/player/bg/default_bg.jpg) center no-repeat fixed;
+    background-size: cover; */
+    font-size: 15px;
+    font-family: "微软雅黑";
+    margin: 0;
+    height: 100vh;
+    user-select: none;
+}
+
+#bg{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    /* backdrop-filter: blur(10px); */
+}
+
+.blur{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backdrop-filter: blur(10px);
+}
+
+.top{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    position: absolute;
+    top: 0;
+}
+
+.loadBtn{
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    background: #ff88bb;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+}
+
+.side{
+    display: flex;
+    align-items: center;
+}
+
+#songList{
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    width: 300px;
+    height: 50%;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+    left: 5vw;
+    transform: translate(0, -50%);
+}
+
+#songList li{
+    display: flex;
+    margin: 20px 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#songList li .index{
+    /* width: 30px; */
+    flex-shrink: 0;
+    text-align: right;
+    margin: 0 10px;
+}
+
+.playing-index{
+    color: #ff88bb;
+    /* width: 30px; */
+    flex-shrink: 0;
+    text-align: right;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.song{
+    max-width: 100%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.playing-song{
+    max-width: 100%;
+    color: #ff88bb;
+    overflow: hidden;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+#selection{
+    box-sizing: border-box;
+    padding: 0 30px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    width: 300px;
+    height: 50%;
+    overflow-y: auto;
+    list-style: none;
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+    right: 5vw;
+    transform: translate(0, -50%);
+}
+
+#selection div{
+    margin: 10px 0;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+#selection div div{
+    margin: 0;
+    width: 120px;
+}
+
+.textinput{
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #ff88bb;
+    width: 60px;
+    height: 20px;
+    font-size: 15px;
+    text-align: center;
+    padding: 0;
+    margin-top: 4px;
+}
+
+.textinput:focus{
+    outline: 0;
+}
+
+.colorinput{
+    border: 0;
+    height: 30px;
+    width: 40px;
+    background: transparent;
+    cursor: pointer;
+}
+
+#selection .btnBox{
+    margin: 20px 0;
+    justify-content: space-around;
+}
+
+#changeBg{
+    color: #fff;
+    height: 30px;
+    width: 90px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #ff88bb;
+    position: relative;
+}
+
+#apply{
+    color: #fff;
+    height: 30px;
+    width: 90px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #ff88bb;
+    cursor: pointer;
+}
+
+.controller{
+    width: 720px;
+    min-height: 120px;
+    /* height: 12%; */
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.progressBar{
+    width: 80%;
+    height: 5px;
+    background-color: #bbbbbb;
+    border-radius: 2.5px;
+    position: absolute;
+    bottom: 20px;
+    overflow: hidden;
+}
+
+.progress{
+    width: 60%;
+    height: inherit;
+    background: linear-gradient(90deg, #ff88bb, #88bbff);
+    border-radius: inherit;
+}
+
+.bottom{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+}
+
+.stage{
+    position: absolute;
+    top: 0;
+}
+
+.stage .el{
+    width: 10px;
+    height: 4px;
+    /* border: 1px solid; */
+    background: #88bbff;
+    position: absolute;
+    transform-origin: 0 0;
+}
+
+.showBtn{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input[type=file]{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    font-size: 0;
+    cursor: pointer;
+}
+
+::-webkit-file-upload-button{
+    padding: 0;
+    border: 0;
+}
+
+button:focus {
+    outline: none;
+}
+
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    color: transparent;
+}

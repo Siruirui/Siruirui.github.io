@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>思睿SiruiのBlog</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="欢迎参观思睿SiruiのBlog - 这里是思睿Sirui的博客Blog，闲暇之余来这里逛逛吧~">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="Emwn1WYTbKouvVkH8qRBKfvj0Yroi6EJbivVuDALF7Y" />
+
+
+    <!-- Site Verification -->
+    <meta name="baidu-site-verification" content="NErQPqwh1HcZfmTB" />
+
+
+    <!-- Site Verification -->
+    <meta name="sogou_site_verification" content="BikjxScrwr" />
+
+  <link rel="shortcut icon" href="https://cdn.staticaly.com/gh/Siruirui/Siruirui.github.io@gh-pages/icon.webp" type="image/png" />
+  <meta name="description" content="可视化音乐播放器                                                                                                                                 添加歌曲">
+<meta property="og:type" content="website">
+<meta property="og:title" content="思睿SiruiのBlog">
+<meta property="og:url" content="https://siruis.top/player/index.html">
+<meta property="og:site_name" content="思睿SiruiのBlog">
+<meta property="og:description" content="可视化音乐播放器                                                                                                                                 添加歌曲">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/Siruirui/Siruirui.github.io@gh-pages/player/bg/default_bg.jpg">
+<meta property="article:published_time" content="2023-07-26T08:46:30.504Z">
+<meta property="article:modified_time" content="2023-04-06T09:51:06.644Z">
+<meta property="article:author" content="思睿Sirui">
+<meta property="article:tag" content="思睿,Sirui,Blog,博客,个人网站">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.staticaly.com/gh/Siruirui/Siruirui.github.io@gh-pages/player/bg/default_bg.jpg">
+  <link rel="stylesheet" href="https://fastly.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,gh/theme-nexmoe/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
+  <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1690361361300">
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.staticaly.com/gh/Siruirui/Siruirui.github.io@gh-pages/bg.webp)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="思睿Sirui" class="mdui-btn mdui-btn-icon"><img src="https://cdn.staticaly.com/gh/Siruirui/Siruirui.github.io@gh-pages/avatar.webp" alt="思睿Sirui"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      
+<meta name="keywords" content="思睿,Sirui,Blog,博客,个人网站">
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c7b10ad7b72d48c0d09d664bfc17350c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="思睿Sirui">
+            <img src="https://cdn.staticaly.com/gh/Siruirui/Siruirui.github.io@gh-pages/avatar.webp" alt="思睿Sirui" alt="思睿Sirui">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>4</div>
+        <div><span>标签</span>4</div>
+        <div><span>分类</span>2</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY" title="友情链接">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                友情链接
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/log" title="建站日志">
+            <i class="mdui-list-item-icon nexmoefont icon-calendar-fill"></i>
+            <div class="mdui-list-item-content">
+                建站日志
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://cn.bing.com/search?q=site:Siruis.top" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://jq.qq.com/?_wv=1027&k=f6NrmBOQ" target="_blank" mdui-tooltip="{content: 'QQ群'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/34344911" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="/subscription" target="_blank" mdui-tooltip="{content: '公众号'}" style="color: rgb(2, 213, 104);background-color: rgba(2, 213, 104, .15);">
+            <i class="nexmoefont icon-wechat-fill"></i>
+        </a><a class="mdui-ripple" href="https://www.zhihu.com/people/ruizzzzz" target="_blank" mdui-tooltip="{content: '知乎'}" style="color: rgb(0, 102, 255);background-color: rgba(0, 102, 255, .15);">
+            <i class="nexmoefont icon-zhihu"></i>
+        </a><a class="mdui-ripple" href="https://github.com/siruirui" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/文章/">文章</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/笔记/">笔记</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/MIUI/" style="font-size: 10px;">MIUI</a> <a href="/tags/%E5%8D%A1%E5%86%9C/" style="font-size: 10px;">卡农</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E9%9F%B3%E4%B9%90/" style="font-size: 10px;">音乐</a>
+    </div>
+    
+  </div>
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2023 思睿Sirui<br />
+        Powered by <br /> <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a><br />
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20211027" target="_blank"> 20211027号</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 56.25%;"> 
+          <img data-src="https://cdn.staticaly.com/gh/Siruirui/Siruirui.github.io@gh-pages/bg.webp" data-sizes="auto" alt="" class="lazyload">
+          <h1></h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2023年07月26日</a>
+    <a><i class="nexmoefont icon-areachart"></i>454 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+  </div>
+
+  <article>
+    <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>可视化音乐播放器</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" href="https://cdn.staticaly.com/gh/Siruirui/Siruirui.github.io@gh-pages/icon.webp">
+        <script src="scripts/anime.min.js"></script>
+        <script src="scripts/color.js"></script>
+        <!-- <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.45/vue.global.js"></script> -->
+    </head>
+    <body>
+        <img id="bg" src="https://cdn.staticaly.com/gh/Siruirui/Siruirui.github.io@gh-pages/player/bg/default_bg.jpg">
+        <div class="blur"></div>
+        <div class="frame">
+            <div class="top">
+                <a id="home" href="https://siruis.top"></a>
+                <div class="loadBtn">添加歌曲
+                    <input type="file" id="loadSong" value="添加歌曲" onchange="addSong(this.files)" multiple>
+                </div>
+            </div>
+            <div class="side">
+                <ul id="songList">
+                    <div style="width: 0;height: 40px;"></div>
+                    <!-- <li>
+                        <div class="index">1</div><div class="song">gequ</div>
+                    </li>
+                    <li>
+                        <div class="playing-index">2</div><div class="playing-song">歌曲1222222222222222222222222222222222222</div>
+                    </li> -->
+                </ul>
+                <div id="selection">
+                    <div style="width: 0;height: 40px;"></div>
+                    <div>
+                        <div>数量：<input class="textinput" id="count" placeholder="180"></div>
+                        <div>宽度：<input class="textinput" id="width" placeholder="自动"></div>
+                    </div>
+                    <div>
+                        <div>半径：<input class="textinput" id="radius" placeholder="200"></div>
+                        <!-- <div>偏转：<input class="textinput" id="deflection" placeholder="0"></div> -->
+                    </div>
+                    <div>触发阈值：<input class="textinput" id="setOffHeight" placeholder="0"></div>
+                    <div>相对高度：<input class="textinput" id="relativeHeight" placeholder="50"></div>
+                    <div>内圈高度：<input class="textinput" id="insideHeight" placeholder="10"></div>
+                    <div>指数级别：<input class="textinput" id="exponent" placeholder="1"></div>
+                    <div>模糊半径：<input class="textinput" id="blurRadius" placeholder="10"></div>
+                    <div>低频<input class="colorinput" type="color" id="lowerColor" value="#ff88bb" style="margin-right: 20px;">高频<input class="colorinput" type="color" id="higherColor" value="#88bbff"></div>
+                    <div style="flex-wrap: wrap;height: auto;">
+                        <div><input type="checkbox" id="mirror">镜像</div>
+                        <div><input type="checkbox" id="rotate">旋转</div>
+                        <div><input type="checkbox" id="inside">内圈</div>
+                        <div><input type="checkbox" id="round">圆角</div>
+                        <div><input type="checkbox" id="blur" checked="true">背景模糊</div>
+                        <div><input type="checkbox" id="clockwise">反向旋转</div>
+                        <div><input type="checkbox" id="reverse">频率反转</div>
+                        <div><input type="checkbox" id="completeRound">完全圆角</div>
+                        <div><input type="checkbox" id="center">中心对称</div>
+                    </div>
+                    <div class="btnBox">
+                        <button id="changeBg">更换背景</button><input type="file" id="loadImage" value="更换背景" onchange="changeBackground(this.files)">
+                        <button id="apply">应用</button>
+                    </div>
+                </div>
+            </div>
+            <div class="controller">
+                <!-- <div class="progressBar"><div class="progress"></div></div> -->
+            </div>
+            <div class="bottom">
+                <div class="loadBtn" id="last" onclick="playLast()">上一首</div>
+                <div class="loadBtn" id="play" onclick="changeState()" style="margin: 0 40px;">播放</div>
+                <div class="loadBtn" id="next" onclick="playNext()">下一首</div>
+            </div>
+            <div class="showBtn" onclick="show()"></div>
+        </div>
+        <div class="stage"></div>
+    </body>
+
+    <script>
+        let songList = [];
+        let playingIndex = 0
+        let mode = "once"
+        let higherColor = "#88bbff"
+        let lowerColor = "#ff88bb"
+        let radius = 200
+        let count = 180
+        let width = 2*Math.PI*radius/count
+        let mirror = 0
+        let blurRadius = 10
+        let maxHeight = 100
+        let setOffHeight = 0
+        let relativeHeight = 50
+        let rotate = false
+        let clockwise = true
+        let reverse = false
+        let inside = false
+        let insideHeight = 10
+        let round = false
+        let completeRound = false
+        let exponent = 1
+        let center = 0
+
+        const lowerColorPicker = document.querySelector('input[id="lowerColor"]')
+        const higherColorPicker = document.querySelector('input[id="higherColor"]')
+        const radiusPicker = document.querySelector('input[id="radius"]')
+        const countPicker = document.querySelector('input[id="count"]')
+        const widthPicker = document.querySelector('input[id="width"]')
+        const mirrorPicker = document.querySelector('input[id="mirror"]')
+        const blurPicker = document.querySelector('input[id="blur"]')
+        const blurRadiusPicker = document.querySelector('input[id="blurRadius"]')
+        const setOffHeightPicker = document.querySelector('input[id="setOffHeight"]')
+        const relativeHeightPicker = document.querySelector('input[id="relativeHeight"]')
+        const rotatePicker = document.querySelector('input[id="rotate"]')
+        const clockwisePicker = document.querySelector('input[id="clockwise"]')
+        const reversePicker = document.querySelector('input[id="reverse"]')
+        const insidePicker = document.querySelector('input[id="inside"]')
+        const insideHeightPicker = document.querySelector('input[id="insideHeight"]')
+        const roundPicker = document.querySelector('input[id="round"]')
+        const completeRoundPicker = document.querySelector('input[id="completeRound"]')
+        const exponentPicker = document.querySelector('input[id="exponent"]')
+        const centerPicker = document.querySelector('input[id="center"]')
+
+        const playButton = document.querySelector('#play')
+        const blur = document.querySelector('.blur')
+        const button = document.querySelector('button[id="apply"]')
+        button.onclick = function() {
+            if(countPicker.value&&countPicker.value>0){count = countPicker.value}else{count = 180}
+            if(radiusPicker.value&&radiusPicker.value>0){radius = radiusPicker.value}else{radius = 200}
+            if(widthPicker.value&&widthPicker.value>0){width = widthPicker.value}else{width = 2*Math.PI*radius/count}
+            higherColor = higherColorPicker.value
+            lowerColor = lowerColorPicker.value
+            mirror = mirrorPicker.checked?1:0
+            if(blurRadiusPicker.value&&blurRadiusPicker.value>0){blurRadius = blurRadiusPicker.value}else{blurRadius = 10}
+            blur.style.backdropFilter = blurPicker.checked?'blur('+blurRadius+'px)':'blur(0)'
+            if(setOffHeightPicker.value&&setOffHeightPicker.value>0){setOffHeight = setOffHeightPicker.value}else{setOffHeight = 0}
+            if(relativeHeightPicker.value&&relativeHeightPicker.value>0){relativeHeight = relativeHeightPicker.value}else{relativeHeight = 50}
+            if(exponentPicker.value&&exponentPicker.value>0){exponent = exponentPicker.value}else{exponent = 1}
+            rotate = rotatePicker.checked
+            clockwise = !clockwisePicker.checked
+            reverse = reversePicker.checked
+            inside = insidePicker.checked
+            round = roundPicker.checked
+            completeRound = completeRoundPicker.checked
+            center = centerPicker.checked?1:0
+            if(insideHeightPicker.value&&insideHeightPicker.value>0){insideHeight = insideHeightPicker.value}else{insideHeight = 10}
+            for(i=5;i<12;i++){
+                if(count<=2**i){
+                    analyser.fftSize = 2**(i+2-mirror-center)
+                    break
+                }
+            }
+            initDiv()
+            button.blur()
+        }
+
+        //键盘事件
+        document.body.onkeydown = function(event) {
+            if(event.code == 'Space'){
+                changeState()
+            }
+            if(event.ctrlKey&&event.code == 'ArrowRight'){
+                playNext()
+            }
+            if(event.ctrlKey&&event.code == 'ArrowLeft'){
+                playLast()
+            }
+        }
+
+        let addSong = function(files) {
+            let fail = []
+            flag:for(i=0;i<files.length;i++){
+                // console.log(files)
+                if (!files[i].name.match(/\.mp3$|\.wav$|\.mid$|\.flac$|\.ogg$|\.ape$|\.aac$/i)){
+                    fail.push(i+1)
+                    continue
+                }
+                let name = files[i].name.substring(0, files[i].name.lastIndexOf("."))
+                for(j=0;j<songList.length;j++){
+                    if(name == songList[j].name){
+                        continue flag
+                    }
+                };
+                songList.push({name:name})
+                
+                let liEl = document.createElement('li');
+                let num = i
+                liEl.addEventListener('click',()=>{
+                    if(!decoding){
+                        play(files[num], liEl);
+                        selected(liEl);
+                    }
+                })
+
+                let indexDivEl = document.createElement('div');
+                indexDivEl.classList.add('index');
+                indexDivEl.innerHTML = songList.length;
+                liEl.append(indexDivEl);
+
+                let songDivEl = document.createElement('div');
+                songDivEl.classList.add('song');
+                songDivEl.innerHTML = name;
+                liEl.append(songDivEl);
+
+                let songListEl = document.getElementById('songList');
+                songListEl.append(liEl);
+            }
+
+            if(fail.length) {
+                if(files.length==1){
+                    alert("文件格式不支持，请重新选择")
+                } else {
+                    alert("第"+fail.toString()+"个文件格式不支持")
+                }
+            }
+            
+            document.querySelector('#loadSong').blur()
+        }
+
+        let changeBackground = function(files) {
+            if (!files[0].name.match(/\.jpg$|\.jpeg$|\.png$|\.bmp$|\.webp$/i)){
+                alert("文件格式不支持，请重新选择")
+                let loadImageEl = document.getElementById('loadImage')
+                loadImageEl.value = ''
+                return
+            }
+            let ir = new FileReader()
+            ir.readAsDataURL(files[0])
+            ir.onload = function (e){
+                const bg = document.getElementById('bg')
+                bg.src = ir.result
+            }
+            
+            document.querySelector('#loadImage').blur()
+        }
+
+        let selected = function(playingEl){
+            let liChildren = document.getElementById('songList').children;
+            for (let i = 1; i < liChildren.length; i++) {
+                liChildren.item(i).firstChild.classList.remove('playing-index');
+                liChildren.item(i).lastChild.classList.remove('playing-song');
+            }
+            playingEl.firstChild.classList.add('playing-index');
+            playingEl.lastChild.classList.add('playing-song');
+            playingIndex = playingEl.firstChild.innerHTML-1
+        }
+
+        //音乐播放
+        let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        let audioBufferSourceNode = null;
+        let analyser = audioCtx.createAnalyser();
+        let fr = new FileReader();
+        let decoding = false
+        let play = function (file) {
+            decoding = true
+            if (audioBufferSourceNode != null || animation != null) {
+                audioBufferSourceNode.stop()
+                cancelAnimationFrame(animation)
+            }
+            fr.onload = function (e) {
+                audioCtx.decodeAudioData(e.target.result).then(function (buffer) {
+                    audioBufferSourceNode = null;
+                    audioBufferSourceNode = audioCtx.createBufferSource();
+                    audioBufferSourceNode.buffer = buffer;
+                    audioBufferSourceNode.connect(audioCtx.destination);
+                    audioBufferSourceNode.connect(analyser);
+                    audioBufferSourceNode.loop = (mode == "loop");
+                    audioBufferSourceNode.start(0);
+                    decoding = false
+                })
+                getMusicData();
+                startTime = Date.now()
+                state = "play"
+                sumSuspended = 0
+                playButton.innerHTML = "暂停"
+            }
+            fr.readAsArrayBuffer(file);
+            audioCtx = null
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)()
+            analyser = audioCtx.createAnalyser()
+            for(i=5;i<12;i++){
+                if(count<=2**i){
+                    analyser.fftSize = 2**(i+1-mirror)
+                    break
+                }
+            }
+        }
+
+        //加载音乐波形分析器
+        let animation = null
+        let getMusicData = function () {
+            animation = requestAnimationFrame(getMusicData);
+            const audioInfoArray = new Uint8Array(analyser.frequencyBinCount);
+            analyser.getByteFrequencyData(audioInfoArray);
+            animeDiv(audioInfoArray);
+        }
+
+        //初始化div
+        let initDiv = function () {
+            let stageDivEl = document.querySelector('.stage');
+            if(stageDivEl.children.length!=0){
+                stageDivEl.innerHTML=""
+            }
+            if(center&&!mirror){
+                if(count%2!=0){count = (Math.ceil(count)%2==0?Math.ceil(count):Math.ceil(count)+1)}
+            } else if(mirror&&center){
+                if(count%2!=0){count = (Math.ceil(count)%2==0?Math.ceil(count):Math.ceil(count)+1)}
+                if((count/2)%2!=0){count = count + 2}
+            }
+
+            const winWidth = document.documentElement.clientWidth;
+            const winHeight = document.documentElement.clientHeight;
+            const avd = 360 / count;
+            const ahd = avd * Math.PI / 180;
+            for (let i = 0; i < count; i++) {
+                let divEl = document.createElement('div');
+                let ci = i;
+                if(mirror&&!center){
+                    if(i<=count/2-1){ci = i * 2}else if(i>=count/2){ci = (count-1-i) * 2}else{ci = count}
+                } else if(center&&!mirror){
+                    if(i<count/2){ci = i * 2}else {ci = (i-count/2)*2}
+                } else if(mirror&&center){
+                    ci = i<count/4?i*4 : i<count*2/4?(count*2/4-i)*4 : i<count*3/4? (i-count*2/4)*4 : (count-i)*4
+                }
+                const color = gradientColor(lowerColor,higherColor,ci,count);
+                divEl.setAttribute('style','background-color:'+color+';box-shadow:0px 0px 10px'+color+';width:'+width+'px' + (round?(completeRound?';border-radius:'+width/2+'px;height:'+width+'px':';border-bottom-left-radius:'+width/2+'px;border-bottom-right-radius:'+width/2+'px;height:6px'):''));
+                divEl.classList.add('el');
+                stageDivEl.append(divEl);
+                let ri = i;
+                if(reverse){
+                    ri = count-1-i;
+                }
+                anime({
+                    targets:divEl,
+                    translateX:[winWidth / 2,winWidth /2 + Math.sin(ahd * (ri+1) - (2*Math.PI*radius/count-width)/2/radius) * radius],
+                    translateY:[winHeight / 2,winHeight / 2 - Math.cos(ahd * (ri+1) - (2*Math.PI*radius/count-width)/2/radius) * radius],
+                    rotate:[-(avd * (count/2-ri) - avd / 2)],
+                    loop:false,
+                    duration:1
+                })
+            }
+
+            if(inside){
+                for (let i = 0; i < count; i++) {
+                    let divEl = document.createElement('div');
+                    let ci = i;
+                    if(mirror&&!center){
+                        if(i<=count/2-1){ci = i * 2}else if(i>=count/2){ci = (count-1-i) * 2}else{ci = count}
+                    } else if(center&&!mirror){
+                        if(i<count/2){ci = i * 2}else{ci = (i-count/2)*2}
+                    } else if(mirror&&center){
+                        ci = i<count/4?i*4 : i<count*2/4?(count*2/4-i)*4 : i<count*3/4? (i-count*2/4)*4 : (count-i)*4
+                    }
+                    const color = gradientColor(lowerColor,higherColor,ci,count);
+                    divEl.setAttribute('style','background-color:'+color+';box-shadow:0px 0px 10px'+color+';width:'+width+'px;height:0' + (round?(completeRound?';border-radius:'+width/2+'px':';border-bottom-left-radius:'+width/2+'px;border-bottom-right-radius:'+width/2+'px'):''));
+                    divEl.classList.add('el');
+                    stageDivEl.append(divEl);
+                    let ri = i;
+                    if(reverse){
+                        ri = count-1-i;
+                    }
+                    anime({
+                        targets:divEl,
+                        translateX:[winWidth / 2,winWidth /2 + Math.sin(ahd * ri + (2*Math.PI*radius/count-width)/2/radius) * radius],
+                        translateY:[winHeight / 2,winHeight / 2 - Math.cos(ahd * ri + (2*Math.PI*radius/count-width)/2/radius) * radius],
+                        rotate:[180 - (avd * (count/2-ri) - avd / 2)],
+                        loop:false,
+                        duration:1
+                    })
+                }
+            }
+
+        }
+        initDiv();
+        
+        // 形成动画
+        let startTime = 0
+        let sumSuspended = 0
+        let animeDiv = function(audioInfoArray){
+            let stageDivEl = document.querySelector('.stage');
+            const winWidth = document.documentElement.clientWidth;
+            const winHeight = document.documentElement.clientHeight;
+            const avd = 360 / count;
+            const ahd = avd * Math.PI / 180;
+            const now = Date.now()
+            const time = rotate?clockwise?parseInt(now-startTime-sumSuspended):-parseInt(now-startTime-sumSuspended):0
+            count = parseInt(count)
+            width = width - 0
+            if(!mirror&&center){
+                for(let i = 0;i < count/2;i++){
+                    let ri = i;
+                    if(reverse){
+                        ri = count/2-1-i;
+                    }
+                    anime({
+                        targets:stageDivEl.children[i],
+                        height:[audioInfoArray[i]>=setOffHeight?((audioInfoArray[i]-setOffHeight)/(255-setOffHeight))**exponent*(255-setOffHeight)*relativeHeight/100+(completeRound?width:4):(completeRound?width:4)],
+                        translateX:[winWidth /2 + Math.sin(ahd * (ri+1) - (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                        translateY:[winHeight / 2 - Math.cos(ahd * (ri+1) - (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                        rotate:[-(avd * (count/2-ri) - avd / 2 - 0.012*time)],
+                        duration:1
+                    })
+                    anime({
+                        targets:stageDivEl.children[count/2+i],
+                        height:[audioInfoArray[i]>=setOffHeight?((audioInfoArray[i]-setOffHeight)/(255-setOffHeight))**exponent*(255-setOffHeight)*relativeHeight/100+(completeRound?width:4):(completeRound?width:4)],
+                        translateX:[winWidth /2 + Math.sin(ahd * (count/2+ri+1) - (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                        translateY:[winHeight / 2 - Math.cos(ahd * (count/2+ri+1) - (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                        rotate:[-(avd * (count/2-(count/2+ri)) - avd / 2 - 0.012*time)],
+                        duration:1
+                    })
+                }
+
+                if(inside){
+                    for(let i = 0;i < count/2;i++){
+                        let ri = i;
+                        if(reverse){
+                            ri = count/2-1-i;
+                        }
+                        anime({
+                            targets:stageDivEl.children[count+i],
+                            height:[audioInfoArray[i]>=setOffHeight?((audioInfoArray[i]-setOffHeight)/(255-setOffHeight))**exponent*(255-setOffHeight)*insideHeight/100:0],
+                            translateX:[winWidth /2 + Math.sin(ahd * ri + (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                            translateY:[winHeight / 2 - Math.cos(ahd * ri + (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                            rotate:[180 - (avd * (count/2-ri) - avd / 2 - 0.012*time)],
+                            duration:1
+                        })
+                        anime({
+                            targets:stageDivEl.children[count+count/2+i],
+                            height:[audioInfoArray[i]>=setOffHeight?((audioInfoArray[i]-setOffHeight)/(255-setOffHeight))**exponent*(255-setOffHeight)*insideHeight/100:0],
+                            translateX:[winWidth /2 + Math.sin(ahd * (count/2+ri) + (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                            translateY:[winHeight / 2 - Math.cos(ahd * (count/2+ri) + (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                            rotate:[180 - (avd * (count/2-(count/2+ri)) - avd / 2 - 0.012*time)],
+                            duration:1
+                        })
+                    }
+                }
+                
+            } else if(mirror&&!center){
+                for(let i = 0;i < count/2;i++){
+                    let ri = i;
+                    if(reverse){
+                        ri = count/2-1-i;
+                    }
+                    anime({
+                        targets:stageDivEl.children[i],
+                        height:[audioInfoArray[i]>=setOffHeight?((audioInfoArray[i]-setOffHeight)/(255-setOffHeight))**exponent*(255-setOffHeight)*relativeHeight/100+(completeRound?width:4):(completeRound?width:4)],
+                        translateX:[winWidth /2 + Math.sin(ahd * (ri+1) - (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                        translateY:[winHeight / 2 - Math.cos(ahd * (ri+1) - (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                        rotate:[-(avd * (count/2-ri) - avd / 2 - 0.012*time)],
+                        duration:1
+                    })
+                    anime({
+                        targets:stageDivEl.children[count-1-i],
+                        height:[audioInfoArray[i]>=setOffHeight?((audioInfoArray[i]-setOffHeight)/(255-setOffHeight))**exponent*(255-setOffHeight)*relativeHeight/100+(completeRound?width:4):(completeRound?width:4)],
+                        translateX:[winWidth /2 + Math.sin(ahd * (count-1-ri+1) - (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                        translateY:[winHeight / 2 - Math.cos(ahd * (count-1-ri+1) - (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                        rotate:[-(avd * (count/2-(count-1-ri)) - avd / 2 - 0.012*time)],
+                        duration:1
+                    })
+                }
+
+                if(inside){
+                    for(let i = 0;i < count/2;i++){
+                        let ri = i;
+                        if(reverse){
+                            ri = count/2-1-i;
+                        }
+                        anime({
+                            targets:stageDivEl.children[count+i],
+                            height:[audioInfoArray[i]>=setOffHeight?((audioInfoArray[i]-setOffHeight)/(255-setOffHeight))**exponent*(255-setOffHeight)*insideHeight/100:0],
+                            translateX:[winWidth /2 + Math.sin(ahd * ri + (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                            translateY:[winHeight / 2 - Math.cos(ahd * ri + (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                            rotate:[180 - (avd * (count/2-ri) - avd / 2 - 0.012*time)],
+                            duration:1
+                        })
+                        anime({
+                            targets:stageDivEl.children[count+count-1-i],
+                            height:[audioInfoArray[i]>=setOffHeight?((audioInfoArray[i]-setOffHeight)/(255-setOffHeight))**exponent*(255-setOffHeight)*insideHeight/100:0],
+                            translateX:[winWidth /2 + Math.sin(ahd * (count-1-ri) + (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                            translateY:[winHeight / 2 - Math.cos(ahd * (count-1-ri) + (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                            rotate:[180 - (avd * (count/2-(count-1-ri)) - avd / 2 - 0.012*time)],
+                            duration:1
+                        })
+                    }
+                }
+                
+            } else if(mirror&&center){
+                for(let i = 0;i < count/4;i++){
+                    let ri = i;
+                    if(reverse){
+                        ri = count/4-1-i;
+                    }
+                    anime({
+                        targets:stageDivEl.children[i],
+                        height:[audioInfoArray[i]>=setOffHeight?((audioInfoArray[i]-setOffHeight)/(255-setOffHeight))**exponent*(255-setOffHeight)*relativeHeight/100+(completeRound?width:4):(completeRound?width:4)],
+                        translateX:[winWidth /2 + Math.sin(ahd * (ri+1) - (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                        translateY:[winHeight / 2 - Math.cos(ahd * (ri+1) - (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                        rotate:[-(avd * (count/2-ri) - avd / 2 - 0.012*time)],
+                        duration:1
+                    })
+                    anime({
+                        targets:stageDivEl.children[count/2-1-i],
+                        height:[audioInfoArray[i]>=setOffHeight?((audioInfoArray[i]-setOffHeight)/(255-setOffHeight))**exponent*(255-setOffHeight)*relativeHeight/100+(completeRound?width:4):(completeRound?width:4)],
+                        translateX:[winWidth /2 + Math.sin(ahd * (count/2-1-ri+1) - (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                        translateY:[winHeight / 2 - Math.cos(ahd * (count/2-1-ri+1) - (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                        rotate:[-(avd * (count/2-(count/2-1-ri)) - avd / 2 - 0.012*time)],
+                        duration:1
+                    })
+                    anime({
+                        targets:stageDivEl.children[count/2+i],
+                        height:[audioInfoArray[i]>=setOffHeight?((audioInfoArray[i]-setOffHeight)/(255-setOffHeight))**exponent*(255-setOffHeight)*relativeHeight/100+(completeRound?width:4):(completeRound?width:4)],
+                        translateX:[winWidth /2 + Math.sin(ahd * (count/2+ri+1) - (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                        translateY:[winHeight / 2 - Math.cos(ahd * (count/2+ri+1) - (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                        rotate:[-(avd * (count/2-(count/2+ri)) - avd / 2 - 0.012*time)],
+                        duration:1
+                    })
+                    anime({
+                        targets:stageDivEl.children[count-1-i],
+                        height:[audioInfoArray[i]>=setOffHeight?((audioInfoArray[i]-setOffHeight)/(255-setOffHeight))**exponent*(255-setOffHeight)*relativeHeight/100+(completeRound?width:4):(completeRound?width:4)],
+                        translateX:[winWidth /2 + Math.sin(ahd * (count-1-ri+1) - (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                        translateY:[winHeight / 2 - Math.cos(ahd * (count-1-ri+1) - (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                        rotate:[-(avd * (count/2-(count-1-ri)) - avd / 2 - 0.012*time)],
+                        duration:1
+                    })
+                }
+
+                if(inside){
+                    for(let i = 0;i < count/4;i++){
+                        let ri = i;
+                        if(reverse){
+                            ri = count/4-1-i;
+                        }
+                        anime({
+                            targets:stageDivEl.children[count+i],
+                            height:[audioInfoArray[i]>=setOffHeight?((audioInfoArray[i]-setOffHeight)/(255-setOffHeight))**exponent*(255-setOffHeight)*insideHeight/100:0],
+                            translateX:[winWidth /2 + Math.sin(ahd * ri + (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                            translateY:[winHeight / 2 - Math.cos(ahd * ri + (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                            rotate:[180 - (avd * (count/2-ri) - avd / 2 - 0.012*time)],
+                            duration:1
+                        })
+                        anime({
+                            targets:stageDivEl.children[count+count/2-1-i],
+                            height:[audioInfoArray[i]>=setOffHeight?((audioInfoArray[i]-setOffHeight)/(255-setOffHeight))**exponent*(255-setOffHeight)*insideHeight/100:0],
+                            translateX:[winWidth /2 + Math.sin(ahd * (count/2-1-ri) + (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                            translateY:[winHeight / 2 - Math.cos(ahd * (count/2-1-ri) + (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                            rotate:[180 - (avd * (count/2-(count/2-1-ri)) - avd / 2 - 0.012*time)],
+                            duration:1
+                        })
+                        anime({
+                            targets:stageDivEl.children[count+count/2+i],
+                            height:[audioInfoArray[i]>=setOffHeight?((audioInfoArray[i]-setOffHeight)/(255-setOffHeight))**exponent*(255-setOffHeight)*insideHeight/100:0],
+                            translateX:[winWidth /2 + Math.sin(ahd * (count/2+ri) + (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                            translateY:[winHeight / 2 - Math.cos(ahd * (count/2+ri) + (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                            rotate:[180-(avd * (count/2-(count/2+ri)) - avd / 2 - 0.012*time)],
+                            duration:1
+                        })
+                        anime({
+                            targets:stageDivEl.children[count+count-1-i],
+                            height:[audioInfoArray[i]>=setOffHeight?((audioInfoArray[i]-setOffHeight)/(255-setOffHeight))**exponent*(255-setOffHeight)*insideHeight/100:0],
+                            translateX:[winWidth /2 + Math.sin(ahd * (count-1-ri) + (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                            translateY:[winHeight / 2 - Math.cos(ahd * (count-1-ri) + (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                            rotate:[180-(avd * (count/2-(count-1-ri)) - avd / 2 - 0.012*time)],
+                            duration:1
+                        })
+                    }
+                }
+                
+            } else {
+                for(let i = 0;i < count;i++){
+                    let ri = i;
+                    if(reverse){
+                        ri = count-1-i;
+                    }
+                    anime({
+                        targets:stageDivEl.children[i],
+                        height:[audioInfoArray[i]>=setOffHeight?((audioInfoArray[i]-setOffHeight)/(255-setOffHeight))**exponent*(255-setOffHeight)*relativeHeight/100+(completeRound?width:4):4],
+                        translateX:[winWidth /2 + Math.sin(ahd * (ri+1) - (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                        translateY:[winHeight / 2 - Math.cos(ahd * (ri+1) - (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                        rotate:[-(avd * (count/2-ri) - avd / 2 - 0.012*time)],
+                        duration:1
+                    })
+                }
+                
+                if(inside){
+                    for(let i = 0;i < count;i++){
+                        let ri = i;
+                        if(reverse){
+                            ri = count-1-i;
+                        }
+                        anime({
+                            targets:stageDivEl.children[count+i],
+                            height:[audioInfoArray[i]>=setOffHeight?((audioInfoArray[i]-setOffHeight)/(255-setOffHeight))**exponent*(255-setOffHeight)*insideHeight/100:0],
+                            translateX:[winWidth /2 + Math.sin(ahd * ri + (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                            translateY:[winHeight / 2 - Math.cos(ahd * ri + (2*Math.PI*radius/count-width)/2/radius+Math.PI/15000*time) * radius],
+                            rotate:[180 - (avd * (count/2-ri) - avd / 2 - 0.012*time)],
+                            duration:1
+                        })
+                    }
+                }
+            }
+        }
+
+        document.querySelector(".blur").addEventListener("dblclick", function () {
+            let frameDivEl = document.querySelector('.frame');
+            frameDivEl.setAttribute('style', 'opacity: 0');
+        })
+
+        let show = function() {
+            let frameDivEl = document.querySelector('.frame');
+            frameDivEl.setAttribute('style', 'opacity: 1');
+        }
+
+        let state = "stop"
+        let suspendTime = 0
+        let changeState = function() {
+            if (state == "play") {
+                suspendTime = Date.now()
+                cancelAnimationFrame(animation)
+                audioCtx.suspend()
+                state = "pause"
+                playButton.innerHTML = "播放"
+            } else if(state == "pause") {
+                sumSuspended = sumSuspended + Date.now()-suspendTime
+                audioCtx.resume()
+                requestAnimationFrame(getMusicData)
+                state = "play"
+                playButton.innerHTML = "暂停"
+            } else if(songList.length){
+                let list = document.getElementsByTagName('li')
+                list[0].click()
+            }
+        }
+
+        let playNext = function() {
+            let list = document.getElementsByTagName('li')
+            if(!list.length){
+                return
+            }
+            if(playingIndex<songList.length-1){
+                list[playingIndex+1].click()
+            } else {
+                list[0].click()
+            }
+        }
+
+        let playLast = function() {
+            let list = document.getElementsByTagName('li')
+            if(!list.length){
+                return
+            }
+            if(playingIndex>0){
+                list[playingIndex-1].click()
+            } else {
+                list[songList.length-1].click()
+            }
+        }
+
+        // const { createApp } = Vue
+        // createApp({
+        //     data() {
+        //         return {
+        //             songList: [{name:"sad"},{name:"happy"}]
+        //         }
+        //     },
+        //     methods: {
+        //         addSong(event) {
+        //             // this.songList.push(files[0])
+        //             console.log(555,event)
+        //         }
+        //     }
+        // }).mount('#songList')
+
+    </script>
+
+</html>
+  </article>
+
+  
+    
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>思睿Sirui<br>
+    <strong>本文链接：</strong><a href="https://siruis.top/player/index.html" title="https:&#x2F;&#x2F;siruis.top&#x2F;player&#x2F;index.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;siruis.top&#x2F;player&#x2F;index.html</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+<div id="waline"></div>
+<script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+
+    init({
+      el: '#waline',
+      serverURL: 'https://wcomment-kappa.vercel.app',
+      emoji: [
+      '//unpkg.com/@waline/emojis@1.1.0/bilibili',
+      '//unpkg.com/@waline/emojis@1.1.0/bmoji',
+      '//unpkg.com/@waline/emojis@1.1.0/qq',
+      '//unpkg.com/@waline/emojis@1.1.0/tieba',
+      '//unpkg.com/@waline/emojis@1.1.0/weibo',
+    ],
+    });
+</script>
+<!-- <script>
+    waline.init({
+        el: '#waline',
+        serverURL: 'https://wcomment-kappa.vercel.app/',
+        placeholder: '说点什么吧~\n留下邮箱方便接收回复提醒哟',
+        emojiCDN: 'https://cdn.staticaly.com/gh/GamerNoTitle/ValineCDN@master/',
+        emojiMaps: {
+            "妙啊": "bilibiliHotKey/1.jpg",
+            "你细品": "bilibiliHotKey/10.jpg",
+            "锤": "bilibiliHotKey/11.jpg",
+            "秀": "bilibiliHotKey/12.jpg",
+            "你币有了": "bilibiliHotKey/13.jpg",
+            "这次一定": "bilibiliHotKey/14.jpg",
+            "我酸了": "bilibiliHotKey/15.jpg",
+            "打卡": "bilibiliHotKey/16.jpg",
+            "神仙UP": "bilibiliHotKey/17.jpg",
+            "我太南了": "bilibiliHotKey/18.jpg",
+            "吹爆": "bilibiliHotKey/19.jpg",
+            "危": "bilibiliHotKey/2.jpg",
+            "奥力给": "bilibiliHotKey/20.jpg",
+            "AWSL": "bilibiliHotKey/21.jpg",
+            "猛男必看": "bilibiliHotKey/22.jpg",
+            "害": "bilibiliHotKey/23.jpg",
+            "知识盲区": "bilibiliHotKey/24.jpg",
+            "我全都要": "bilibiliHotKey/25.jpg",
+            "咕咕": "bilibiliHotKey/26.jpg",
+            "可以": "bilibiliHotKey/27.jpg",
+            "真香": "bilibiliHotKey/28.jpg",
+            "完结撒花": "bilibiliHotKey/29.jpg",
+            "有内味了": "bilibiliHotKey/3.jpg",
+            "有生之年": "bilibiliHotKey/30.jpg",
+            "大师球": "bilibiliHotKey/31.jpg",
+            "爷关更": "bilibiliHotKey/32.jpg",
+            "高产": "bilibiliHotKey/4.jpg",
+            "我哭了": "bilibiliHotKey/5.jpg",
+            "不愧是你": "bilibiliHotKey/6.jpg",
+            "一键三连": "bilibiliHotKey/7.jpg",
+            "镇站之宝": "bilibiliHotKey/8.jpg",
+            "“狼火”": "bilibiliHotKey/9.jpg",
+            "tv_doge": "bilibilitv/[tv_doge].png",
+            "tv_亲亲": "bilibilitv/[tv_亲亲].png",
+            "tv_偷笑": "bilibilitv/[tv_偷笑].png",
+            "tv_再见": "bilibilitv/[tv_再见].png",
+            "tv_冷漠": "bilibilitv/[tv_冷漠].png",
+            "tv_发怒": "bilibilitv/[tv_发怒].png",
+            "tv_发财": "bilibilitv/[tv_发财].png",
+            "tv_可爱": "bilibilitv/[tv_可爱].png",
+            "tv_吐血": "bilibilitv/[tv_吐血].png",
+            "tv_呆": "bilibilitv/[tv_呆].png",
+            "tv_呕吐": "bilibilitv/[tv_呕吐].png",
+            "tv_困": "bilibilitv/[tv_困].png",
+            "tv_坏笑": "bilibilitv/[tv_坏笑].png",
+            "tv_大佬": "bilibilitv/[tv_大佬].png",
+            "tv_大哭": "bilibilitv/[tv_大哭].png",
+            "tv_委屈": "bilibilitv/[tv_委屈].png",
+            "tv_害羞": "bilibilitv/[tv_害羞].png",
+            "tv_尴尬": "bilibilitv/[tv_尴尬].png",
+            "tv_微笑": "bilibilitv/[tv_微笑].png",
+            "tv_思考": "bilibilitv/[tv_思考].png",
+            "tv_惊吓": "bilibilitv/[tv_惊吓].png",
+            "tv_打脸": "bilibilitv/[tv_打脸].png",
+            "tv_抓狂": "bilibilitv/[tv_抓狂].png",
+            "tv_抠鼻": "bilibilitv/[tv_抠鼻].png",
+            "tv_斜眼笑": "bilibilitv/[tv_斜眼笑].png",
+            "tv_无奈": "bilibilitv/[tv_无奈].png",
+            "tv_晕": "bilibilitv/[tv_晕].png",
+            "tv_流汗": "bilibilitv/[tv_流汗].png",
+            "tv_流泪": "bilibilitv/[tv_流泪].png",
+            "tv_流鼻血": "bilibilitv/[tv_流鼻血].png",
+            "tv_点赞": "bilibilitv/[tv_点赞].png",
+            "tv_生气": "bilibilitv/[tv_生气].png",
+            "tv_生病": "bilibilitv/[tv_生病].png",
+            "tv_疑问": "bilibilitv/[tv_疑问].png",
+            "tv_白眼": "bilibilitv/[tv_白眼].png",
+            "tv_皱眉": "bilibilitv/[tv_皱眉].png",
+            "tv_目瞪口呆": "bilibilitv/[tv_目瞪口呆].png",
+            "tv_睡着": "bilibilitv/[tv_睡着].png",
+            "tv_笑哭": "bilibilitv/[tv_笑哭].png",
+            "tv_腼腆": "bilibilitv/[tv_腼腆].png",
+            "tv_色": "bilibilitv/[tv_色].png",
+            "tv_调侃": "bilibilitv/[tv_调侃].png",
+            "tv_调皮": "bilibilitv/[tv_调皮].png",
+            "tv_鄙视": "bilibilitv/[tv_鄙视].png",
+            "tv_闭嘴": "bilibilitv/[tv_闭嘴].png",
+            "tv_难过": "bilibilitv/[tv_难过].png",
+            "tv_馋": "bilibilitv/[tv_馋].png",
+            "tv_鬼脸": "bilibilitv/[tv_鬼脸].png",
+            "tv_黑人问号": "bilibilitv/[tv_黑人问号].png",
+            "tv_鼓掌": "bilibilitv/[tv_鼓掌].png",
+            "Coolapk2": "Coolapk/coolapk_emotion_100_qqdoge.png",
+            "Coolapk3": "Coolapk/coolapk_emotion_1010.png",
+            "Coolapk4": "Coolapk/coolapk_emotion_1011.png",
+            "Coolapk5": "Coolapk/coolapk_emotion_1012.png",
+            "Coolapk6": "Coolapk/coolapk_emotion_1013.png",
+            "Coolapk7": "Coolapk/coolapk_emotion_1014.png",
+            "Coolapk8": "Coolapk/coolapk_emotion_1015.png",
+            "Coolapk9": "Coolapk/coolapk_emotion_1016.png",
+            "Coolapk10": "Coolapk/coolapk_emotion_1017.png",
+            "Coolapk11": "Coolapk/coolapk_emotion_1018.png",
+            "Coolapk12": "Coolapk/coolapk_emotion_1019.png",
+            "Coolapk13": "Coolapk/coolapk_emotion_101_pyjiaoyi.png",
+            "Coolapk14": "Coolapk/coolapk_emotion_1020.png",
+            "Coolapk15": "Coolapk/coolapk_emotion_1021.png",
+            "Coolapk16": "Coolapk/coolapk_emotion_102_fadai.png",
+            "Coolapk17": "Coolapk/coolapk_emotion_103_nb.png",
+            "Coolapk18": "Coolapk/coolapk_emotion_104.png",
+            "Coolapk19": "Coolapk/coolapk_emotion_105.png",
+            "Coolapk20": "Coolapk/coolapk_emotion_106.png",
+            "Coolapk21": "Coolapk/coolapk_emotion_107.png",
+            "Coolapk22": "Coolapk/coolapk_emotion_108.png",
+            "Coolapk23": "Coolapk/coolapk_emotion_109.png",
+            "Coolapk24": "Coolapk/coolapk_emotion_10_aoman.png",
+            "Coolapk25": "Coolapk/coolapk_emotion_11_yiwen.png",
+            "Coolapk26": "Coolapk/coolapk_emotion_12_wuyu.png",
+            "Coolapk27": "Coolapk/coolapk_emotion_13_huaixiao.png",
+            "Coolapk28": "Coolapk/coolapk_emotion_14_bishi.png",
+            "Coolapk29": "Coolapk/coolapk_emotion_15_fanu.png",
+            "Coolapk30": "Coolapk/coolapk_emotion_16_tuosai.png",
+            "Coolapk31": "Coolapk/coolapk_emotion_17_tushe.png",
+            "Coolapk32": "Coolapk/coolapk_emotion_18_han.png",
+            "Coolapk33": "Coolapk/coolapk_emotion_19_koubi.png",
+            "Coolapk34": "Coolapk/coolapk_emotion_1_hahaha.png",
+            "Coolapk35": "Coolapk/coolapk_emotion_20_qinqin.png",
+            "Coolapk36": "Coolapk/coolapk_emotion_21_penxue.png",
+            "Coolapk37": "Coolapk/coolapk_emotion_22_xiaoyan.png",
+            "Coolapk38": "Coolapk/coolapk_emotion_23_shui.png",
+            "Coolapk39": "Coolapk/coolapk_emotion_24_wuzuixiao.png",
+            "Coolapk40": "Coolapk/coolapk_emotion_25_zaijian.png",
+            "Coolapk41": "Coolapk/coolapk_emotion_26_kelian.png",
+            "Coolapk42": "Coolapk/coolapk_emotion_27_qiang.png",
+            "Coolapk43": "Coolapk/coolapk_emotion_28_ruo.png",
+            "Coolapk44": "Coolapk/coolapk_emotion_29_baoquan.png",
+            "Coolapk45": "Coolapk/coolapk_emotion_2_jingya.png",
+            "Coolapk46": "Coolapk/coolapk_emotion_30_ok.png",
+            "Coolapk47": "Coolapk/coolapk_emotion_31_xiaoku.png",
+            "Coolapk48": "Coolapk/coolapk_emotion_32_heiha.png",
+            "Coolapk49": "Coolapk/coolapk_emotion_33_wulian.png",
+            "Coolapk50": "Coolapk/coolapk_emotion_34_jizhi.png",
+            "Coolapk51": "Coolapk/coolapk_emotion_35_ye.png",
+            "Coolapk52": "Coolapk/coolapk_emotion_36_ku.png",
+            "Coolapk53": "Coolapk/coolapk_emotion_37_doge.png",
+            "Coolapk54": "Coolapk/coolapk_emotion_38_wozuimei.png",
+            "Coolapk55": "Coolapk/coolapk_emotion_39_caidao.png",
+            "Coolapk56": "Coolapk/coolapk_emotion_3_ciya.png",
+            "Coolapk57": "Coolapk/coolapk_emotion_40_aixin.png",
+            "Coolapk58": "Coolapk/coolapk_emotion_41_meigui.png",
+            "Coolapk59": "Coolapk/coolapk_emotion_42_diaoxie.png",
+            "Coolapk60": "Coolapk/coolapk_emotion_43_heixian.png",
+            "Coolapk61": "Coolapk/coolapk_emotion_44_pen.png",
+            "Coolapk62": "Coolapk/coolapk_emotion_45_yinxian.png",
+            "Coolapk63": "Coolapk/coolapk_emotion_46_nanguo.png",
+            "Coolapk64": "Coolapk/coolapk_emotion_47_weiqu.png",
+            "Coolapk65": "Coolapk/coolapk_emotion_48_weiweiyixiao.png",
+            "Coolapk66": "Coolapk/coolapk_emotion_49_huanhu.png",
+            "Coolapk67": "Coolapk/coolapk_emotion_4_liulei.png",
+            "Coolapk68": "Coolapk/coolapk_emotion_50_xinsui.png",
+            "Coolapk69": "Coolapk/coolapk_emotion_51_chigua.png",
+            "Coolapk70": "Coolapk/coolapk_emotion_52_hejiu.png",
+            "Coolapk71": "Coolapk/coolapk_emotion_53_pu.png",
+            "Coolapk72": "Coolapk/coolapk_emotion_54_hongyaowan.png",
+            "Coolapk73": "Coolapk/coolapk_emotion_55_lvyaowan.png",
+            "Coolapk74": "Coolapk/coolapk_emotion_56_dogexiaoku.png",
+            "Coolapk75": "Coolapk/coolapk_emotion_57_dogehechi.png",
+            "Coolapk76": "Coolapk/coolapk_emotion_58_dogeyuanliangta.png",
+            "Coolapk77": "Coolapk/coolapk_emotion_59_erha.png",
+            "Coolapk78": "Coolapk/coolapk_emotion_5_keai.png",
+            "Coolapk79": "Coolapk/coolapk_emotion_60_kuan.png",
+            "Coolapk80": "Coolapk/coolapk_emotion_61_lvmao.png",
+            "Coolapk81": "Coolapk/coolapk_emotion_62_huaji.png",
+            "Coolapk82": "Coolapk/coolapk_emotion_63_liuhanhuaji.png",
+            "Coolapk83": "Coolapk/coolapk_emotion_64_shounuehuaji.png",
+            "Coolapk84": "Coolapk/coolapk_emotion_65_coshuaji.png",
+            "Coolapk85": "Coolapk/coolapk_emotion_66_doujiyanhuaji.png",
+            "Coolapk86": "Coolapk/coolapk_emotion_67_mojinghuaji.png",
+            "Coolapk87": "Coolapk/coolapk_emotion_68.png",
+            "Coolapk88": "Coolapk/coolapk_emotion_69.png",
+            "Coolapk89": "Coolapk/coolapk_emotion_6_weixiao.png",
+            "Coolapk90": "Coolapk/coolapk_emotion_70.png",
+            "Coolapk91": "Coolapk/coolapk_emotion_71.png",
+            "Coolapk92": "Coolapk/coolapk_emotion_72.png",
+            "Coolapk93": "Coolapk/coolapk_emotion_73.png",
+            "Coolapk94": "Coolapk/coolapk_emotion_74.png",
+            "Coolapk95": "Coolapk/coolapk_emotion_75.png",
+            "Coolapk96": "Coolapk/coolapk_emotion_76.png",
+            "Coolapk97": "Coolapk/coolapk_emotion_77.png",
+            "Coolapk98": "Coolapk/coolapk_emotion_78.png",
+            "Coolapk99": "Coolapk/coolapk_emotion_79.png",
+            "Coolapk100": "Coolapk/coolapk_emotion_7_hehe.png",
+            "Coolapk101": "Coolapk/coolapk_emotion_80.png",
+            "Coolapk102": "Coolapk/coolapk_emotion_81_naikezui.png",
+            "Coolapk103": "Coolapk/coolapk_emotion_82_miaomiao.png",
+            "Coolapk104": "Coolapk/coolapk_emotion_83_huoba.png",
+            "Coolapk105": "Coolapk/coolapk_emotion_84_baiyan.png",
+            "Coolapk106": "Coolapk/coolapk_emotion_85.png",
+            "Coolapk107": "Coolapk/coolapk_emotion_86.png",
+            "Coolapk108": "Coolapk/coolapk_emotion_87.png",
+            "Coolapk109": "Coolapk/coolapk_emotion_88.png",
+            "Coolapk110": "Coolapk/coolapk_emotion_89.png",
+            "Coolapk111": "Coolapk/coolapk_emotion_8_piezui.png",
+            "Coolapk112": "Coolapk/coolapk_emotion_90.png",
+            "Coolapk113": "Coolapk/coolapk_emotion_91.png",
+            "Coolapk114": "Coolapk/coolapk_emotion_92.png",
+            "Coolapk115": "Coolapk/coolapk_emotion_93.png",
+            "Coolapk116": "Coolapk/coolapk_emotion_94.png",
+            "Coolapk117": "Coolapk/coolapk_emotion_95_erhading.png",
+            "Coolapk118": "Coolapk/coolapk_emotion_96_kuanlvmao.png",
+            "Coolapk119": "Coolapk/coolapk_emotion_97_haixiu.png",
+            "Coolapk120": "Coolapk/coolapk_emotion_98_wunai.png",
+            "Coolapk121": "Coolapk/coolapk_emotion_99_zhoumei.png",
+            "Coolapk122": "Coolapk/coolapk_emotion_9_se.png",
+            "Coolapk123": "Coolapk/c_coolb.png",
+            "Coolapk124": "Coolapk/c_fived.png",
+            "Coolapk125": "Coolapk/c_fivef.png",
+            "Coolapk126": "Coolapk/c_fivem.png",
+            "Coolapk127": "Coolapk/c_fiveo.png",
+            "Coolapk128": "Coolapk/c_fivey.png",
+            "Coolapk129": "Coolapk/c_fy.png",
+            "Coolapk130": "Coolapk/c_oned.png",
+            "Coolapk131": "Coolapk/c_onef.png",
+            "Coolapk132": "Coolapk/c_onem.png",
+            "Coolapk133": "Coolapk/c_oneo.png",
+            "Coolapk134": "Coolapk/c_oney.png",
+            "Coolapk135": "Coolapk/c_oy.png",
+            "Coolapk136": "Coolapk/c_teny.png",
+            "Coolapk137": "Coolapk/c_twod.png",
+            "Coolapk138": "Coolapk/c_twof.png",
+            "Coolapk139": "Coolapk/c_twom.png",
+            "Coolapk140": "Coolapk/c_twoo.png",
+            "Coolapk141": "Coolapk/c_twoy.png",
+            "Coolapk142": "Coolapk/c_ty.png"
+        }
+    })
+</script> -->
+</section>
+  </div>
+</div>
+        <div class="nexmoe-post-right">
+          <div class="nexmoe-fixed">
+            <div class="nexmoe-tool">
+              <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <script src="https://fastly.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+<script src="https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://fastly.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+<script src="https://fastly.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+ <script src="/js/app.js?v=1690361361301"></script>
+
+<script src="https://fastly.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+  
+
+
+
+
+
+</body>
+
+</html>
