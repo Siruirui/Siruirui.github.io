@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://siruis.top/about.html</loc>
+    
+    <lastmod>2023-07-26</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://siruis.top/PY.html</loc>
     
     <lastmod>2023-07-25</lastmod>
@@ -9,21 +16,7 @@
   </url>
   
   <url>
-    <loc>https://siruis.top/player/index.html</loc>
-    
-    <lastmod>2023-04-06</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://siruis.top/2021-06/miui619/</loc>
-    
-    <lastmod>2022-11-27</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://siruis.top/log.html</loc>
     
     <lastmod>2022-11-27</lastmod>
     
@@ -54,13 +47,6 @@
     <loc>https://siruis.top/subscription.html</loc>
     
     <lastmod>2022-11-27</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://siruis.top/about.html</loc>
-    
-    <lastmod>2021-09-18</lastmod>
     
   </url>
   

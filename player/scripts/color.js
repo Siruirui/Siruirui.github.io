@@ -1,4 +1,4 @@
-<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>function gradientColor(startColor, endColor, currIndex, totalNum) {
+function gradientColor(startColor, endColor, currIndex, totalNum) {
     let startRGB = convertRgb(startColor);//转换为rgb数组模式
     let startR = startRGB[0];
     let startG = startRGB[1];
