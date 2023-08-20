@@ -280,7 +280,7 @@
             analyser = audioCtx.createAnalyser()
             for(i=5;i<12;i++){
                 if(count<=2**i){
-                    analyser.fftSize = 2**(i+1-mirror)
+                    analyser.fftSize = 2**(i+2-mirror-center)
                     break
                 }
             }
