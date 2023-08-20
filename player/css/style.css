@@ -32,6 +32,25 @@ body{
     top: 0;
 }
 
+.homeBtn{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background: #ff88bb;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    position: absolute;
+    left: 10vw;
+    top: 40px;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.homeBtn:active{
+    background: #ee77aa;
+}
+
 .loadBtn{
     width: 150px;
     height: 40px;
@@ -41,6 +60,11 @@ body{
     border-radius: 5px;
     text-align: center;
     position: relative;
+    margin: 5px 0px;
+}
+
+.loadBtn:active{
+    background: #ee77aa;
 }
 
 .side{
@@ -169,6 +193,10 @@ body{
     position: relative;
 }
 
+#changeBg:active{
+    background: #ee77aa;
+}
+
 #apply{
     color: #fff;
     height: 30px;
@@ -177,6 +205,10 @@ body{
     border-radius: 5px;
     background-color: #ff88bb;
     cursor: pointer;
+}
+
+#apply:active{
+    background: #ee77aa;
 }
 
 .controller{
@@ -236,13 +268,32 @@ body{
 }
 
 .showBtn{
-    height: 200px;
-    width: 200px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background: #ff88bb;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
     position: absolute;
     border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 40px;
+    right: 10vw;
+    cursor: pointer;
+    /* transform: translate(-50%, -50%); */
+}
+
+.hiddenBtn{
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.showBtn:hover{
+    opacity: 1;
+}
+
+.showBtn:active{
+    background: #ee77aa;
 }
 
 input[type=file]{
