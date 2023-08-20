@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://siruis.top/about.html</loc>
+    <loc>https://siruis.top/PY.html</loc>
     
-    <lastmod>2023-07-26</lastmod>
+    <lastmod>2023-08-20</lastmod>
     
   </url>
   
   <url>
-    <loc>https://siruis.top/PY.html</loc>
+    <loc>https://siruis.top/about.html</loc>
     
-    <lastmod>2023-07-25</lastmod>
+    <lastmod>2023-07-26</lastmod>
     
   </url>
   
@@ -60,7 +60,7 @@
 
   <url>
     <loc>https://siruis.top/</loc>
-    <lastmod>2023-08-05</lastmod>
+    <lastmod>2023-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -68,28 +68,28 @@
   
   <url>
     <loc>https://siruis.top/tags/%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2023-08-05</lastmod>
+    <lastmod>2023-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://siruis.top/tags/%E9%9F%B3%E4%B9%90/</loc>
-    <lastmod>2023-08-05</lastmod>
+    <lastmod>2023-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://siruis.top/tags/%E5%8D%A1%E5%86%9C/</loc>
-    <lastmod>2023-08-05</lastmod>
+    <lastmod>2023-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://siruis.top/tags/MIUI/</loc>
-    <lastmod>2023-08-05</lastmod>
+    <lastmod>2023-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -98,14 +98,14 @@
   
   <url>
     <loc>https://siruis.top/categories/%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2023-08-05</lastmod>
+    <lastmod>2023-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://siruis.top/categories/%E6%96%87%E7%AB%A0/</loc>
-    <lastmod>2023-08-05</lastmod>
+    <lastmod>2023-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
