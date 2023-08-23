@@ -7,6 +7,7 @@
         <title>可视化音乐播放器 - 思睿SiruiのBlog</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="shortcut icon" href="https://cdn.staticaly.com/gh/Siruirui/Siruirui.github.io@gh-pages/icon.webp" />
+        <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4217945_pzy7vhr6lz.css">
         <script src="https://fastly.jsdelivr.net/gh/Siruirui/Siruirui.github.io@gh-pages/player/scripts/anime.min.js"></script>
         <script src="https://fastly.jsdelivr.net/gh/Siruirui/Siruirui.github.io@gh-pages/player/scripts/color.js"></script>
         <!-- <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.45/vue.global.js"></script> -->
@@ -15,7 +16,9 @@
         <img id="bg" src="https://cdn.staticaly.com/gh/Siruirui/Siruirui.github.io@gh-pages/player/bg/default_bg.jpg"></img>
         <div class="blur"></div>
         <div class="frame">
-            <div class="homeBtn"><img id="homeIcon" src="https://cdn.staticaly.com/gh/Siruirui/Siruirui.github.io@gh-pages/player/src/home.png" style="height: 30px; width: 30px; margin: 10px;" /></div>
+            <div class="homeBtn">
+                <i class="iconfont icon-zhuye" style="font-size: 30px;"></i>
+            </div>
             <div class="top">
                 <div class="loadBtn">添加歌曲
                     <input type="file" id="loadSong" value="添加歌曲" onchange="addSong(this.files)" multiple />
@@ -74,7 +77,9 @@
             </div>
         </div>
         <div class="stage"></div>
-        <div class="showBtn" onclick="show()"><img id="hideIcon" src="https://cdn.staticaly.com/gh/Siruirui/Siruirui.github.io@gh-pages/player/src/hide.png" style="height: 30px; width: 30px; margin: 10px;" /></div>
+        <div class="showBtn" onclick="show()">
+            <i class="iconfont icon-yincang" id="hideIcon" style="font-size: 30px;"></i>
+        </div>
     </body>
 
     <script>
@@ -606,12 +611,12 @@
 
         let display = true
         let show = function() {
-            let frameDivEl = document.querySelector('.frame');
-            frameDivEl.setAttribute('style', display?'display: none':'display: block');
             display = !display;
+            let frameDivEl = document.querySelector('.frame');
+            frameDivEl.setAttribute('style', display?'display: block':'display: none');
             let showBtn = document.querySelector('.showBtn');
             showBtn.setAttribute('class', display?'showBtn':'showBtn hiddenBtn');
-            document.querySelector('#hideIcon').setAttribute('src', display?'https://cdn.staticaly.com/gh/Siruirui/Siruirui.github.io@gh-pages/player/src/hide.png':'https://cdn.staticaly.com/gh/Siruirui/Siruirui.github.io@gh-pages/player/src/show.png');
+            document.querySelector('#hideIcon').setAttribute('class', display?'iconfont icon-yincang':'iconfont icon-xianshi');
         }
 
         let state = "stop"
