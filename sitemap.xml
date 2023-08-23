@@ -60,6 +60,13 @@
 
   
   <url>
+    <loc>https://siruis.top/tags/%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2023-08-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://siruis.top/tags/%E9%9F%B3%E4%B9%90/</loc>
     <lastmod>2023-08-23</lastmod>
     <changefreq>daily</changefreq>
@@ -68,13 +75,6 @@
   
   <url>
     <loc>https://siruis.top/tags/%E5%8D%A1%E5%86%9C/</loc>
-    <lastmod>2023-08-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://siruis.top/tags/%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2023-08-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -90,14 +90,14 @@
 
   
   <url>
-    <loc>https://siruis.top/categories/%E6%96%87%E7%AB%A0/</loc>
+    <loc>https://siruis.top/categories/%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2023-08-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://siruis.top/categories/%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://siruis.top/categories/%E6%96%87%E7%AB%A0/</loc>
     <lastmod>2023-08-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
