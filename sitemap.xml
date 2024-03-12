@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://siruis.top/score/%E3%81%A8%E3%81%91%E3%81%A6%E3%81%84%E3%81%8F%E8%BF%BD%E6%83%B3/index.html</loc>
+    <loc>https://siruis.top/score/%E4%BD%BF%E4%B8%80%E9%A2%97%E5%BF%83%E5%85%8D%E4%BA%8E%E5%93%80%E4%BC%A4/index.html</loc>
     
     <lastmod>2024-03-12</lastmod>
     
@@ -16,14 +16,14 @@
   </url>
   
   <url>
-    <loc>https://siruis.top/PY.html</loc>
+    <loc>https://siruis.top/score/%E3%81%A8%E3%81%91%E3%81%A6%E3%81%84%E3%81%8F%E8%BF%BD%E6%83%B3/index.html</loc>
     
     <lastmod>2024-03-12</lastmod>
     
   </url>
   
   <url>
-    <loc>https://siruis.top/score/%E4%BD%BF%E4%B8%80%E9%A2%97%E5%BF%83%E5%85%8D%E4%BA%8E%E5%93%80%E4%BC%A4/index.html</loc>
+    <loc>https://siruis.top/PY.html</loc>
     
     <lastmod>2024-03-12</lastmod>
     
@@ -102,6 +102,13 @@
   </url>
   
   <url>
+    <loc>https://siruis.top/tags/MIUI/</loc>
+    <lastmod>2024-03-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://siruis.top/tags/%E9%9F%B3%E4%B9%90/</loc>
     <lastmod>2024-03-12</lastmod>
     <changefreq>daily</changefreq>
@@ -110,13 +117,6 @@
   
   <url>
     <loc>https://siruis.top/tags/%E5%8D%A1%E5%86%9C/</loc>
-    <lastmod>2024-03-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://siruis.top/tags/MIUI/</loc>
     <lastmod>2024-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
