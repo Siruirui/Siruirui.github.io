@@ -2,21 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://siruis.top/work.html</loc>
+    <loc>https://siruis.top/score/%E3%81%A8%E3%81%91%E3%81%A6%E3%81%84%E3%81%8F%E8%BF%BD%E6%83%B3/index.html</loc>
     
     <lastmod>2024-03-12</lastmod>
     
   </url>
   
   <url>
-    <loc>https://siruis.top/score.html</loc>
-    
-    <lastmod>2024-03-12</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://siruis.top/score/%E9%80%8D%E9%81%A5%E6%B8%B8/index.html</loc>
+    <loc>https://siruis.top/PY.html</loc>
     
     <lastmod>2024-03-12</lastmod>
     
@@ -30,16 +23,23 @@
   </url>
   
   <url>
-    <loc>https://siruis.top/score/%E3%81%A8%E3%81%91%E3%81%A6%E3%81%84%E3%81%8F%E8%BF%BD%E6%83%B3/index.html</loc>
+    <loc>https://siruis.top/score/%E9%80%8D%E9%81%A5%E6%B8%B8/index.html</loc>
     
     <lastmod>2024-03-12</lastmod>
     
   </url>
   
   <url>
-    <loc>https://siruis.top/PY.html</loc>
+    <loc>https://siruis.top/score.html</loc>
     
-    <lastmod>2023-12-17</lastmod>
+    <lastmod>2024-03-12</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://siruis.top/work.html</loc>
+    
+    <lastmod>2024-03-12</lastmod>
     
   </url>
   
@@ -95,13 +95,6 @@
 
   
   <url>
-    <loc>https://siruis.top/tags/%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2024-03-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://siruis.top/tags/%E9%9F%B3%E4%B9%90/</loc>
     <lastmod>2024-03-12</lastmod>
     <changefreq>daily</changefreq>
@@ -110,6 +103,13 @@
   
   <url>
     <loc>https://siruis.top/tags/%E5%8D%A1%E5%86%9C/</loc>
+    <lastmod>2024-03-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://siruis.top/tags/%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2024-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -125,14 +125,14 @@
 
   
   <url>
-    <loc>https://siruis.top/categories/%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://siruis.top/categories/%E6%96%87%E7%AB%A0/</loc>
     <lastmod>2024-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://siruis.top/categories/%E6%96%87%E7%AB%A0/</loc>
+    <loc>https://siruis.top/categories/%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2024-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
