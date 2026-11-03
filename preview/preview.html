@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>导航</title>
+
+<link rel="stylesheet" href="https://font.sec.miui.com/font/css?family=MiSans:400,500,600,700:MiSans" />
+
+<style>
+:root{
+  --accent: #ff88bb;
+  --accent-80: rgba(255,136,187,.8);
+  --accent-2: #ff9ed1;
+
+  --blur: 24px;
+  --card-bg: rgba(255,255,255,.28);
+  --card-border: rgba(255,255,255,.5);
+
+  --text: #45464e;
+  --text-dim: rgba(69,70,78,.58);
+
+  --veil: rgba(255,255,255,.10);
+  --shadow: 0 12px 34px rgba(20,20,30,.10);
+
+  --page-bg: radial-gradient(120% 120% at 20% 0%, #fbfcfd 0%, #f0f2f6 55%, #e7e9ef 100%);
+
+  /* 时钟 / 格言装饰线相对卡片中心的偏移 */
+  --deco-offset: 68px;
+}
+html[data-theme="dark"]{
+  --card-bg: rgba(24,25,31,.28);
+  --card-border: rgba(255,255,255,.09);
+  --text: #dcdee5;
+  --text-dim: rgba(220,222,229,.60);
+  --veil: rgba(0,0,0,.44);
+  --shadow: 0 12px 34px rgba(0,0,0,.34);
+  --page-bg: radial-gradient(120% 120% at 20% 0%, #2b3040 0%, #14161c 55%, #0d0e12 100%);
+}
+
+*,*::before,*::after{
+  box-sizing:border-box;
+  user-select:none;
+  -webkit-user-select:none;
+  cursor:inherit;
+}
+html,body{
+  height:100%;
+  overflow:hidden;
+  scrollbar-width:none;
+  cursor:none;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar{ width:0; height:0; display:none; }
+body{
+  margin:0;
+  font-family:"MiSans","Mi Sans",-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  color:var(--text);
+  background:var(--page-bg);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  transition: color .4s ease, background .4s ease;
+}
+
+/* ==================== 光标 ==================== */
+.cursor-ring,.cursor-dot{
+  position:fixed; top:0; left:0;
+  pointer-events:none; z-index:9999;
+  opacity:0; transition:opacity .18s ease;
+  border-radius:50%;
+}
+.cursor-ring{
+  width:20px; height:20px; margin:-10px 0 0 -10px;
+  background:rgba(255,255,255,.60);
+  will-change:transform;
+}
+.cursor-dot{
+  width:12px; height:12px; margin:-6px 0 0 -6px;
+  background:rgba(255,255,255,.80);
+}
+@media (pointer: coarse){
+  html,body{ cursor:auto; }
+  .cursor-ring,.cursor-dot{ display:none; }
+}
+
+/* ==================== 背景层 ==================== */
+.bg{
+  position:fixed; inset:0; z-index:0;
+  background-size:cover; background-position:center; background-repeat:no-repeat;
+  opacity:0; transition:opacity 1.2s ease; will-change:opacity; transform:scale(1.02);
+}
+.veil{
+  position:fixed; inset:0; z-index:1;
+  background:var(--veil); transition:background .4s ease; pointer-events:none;
+}
+
+/* ==================== 顶栏 ==================== */
+.topbar{
+  position:fixed; top:16px; left:16px; right:16px; z-index:30;
+  display:flex; justify-content:space-between;
+  pointer-events:none;
+}
+.topbar > *{ pointer-events:auto; }
+
+.icon-btn{
+  width:46px; height:46px; padding:0; border:none; border-radius:50%;
+  background:transparent; color:#fff;
+  display:grid; place-items:center;
+  filter:drop-shadow(0 1px 4px rgba(0,0,0,.55));
+  transition:background .44s ease-out, transform .22s ease-out;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (hover: hover){
+  .icon-btn:hover{
+    background:rgba(0,0,0,.10);
+    transform:translateY(-1px);
+  }
+}
+.icon-btn:active{ background:rgba(0,0,0,.10);transform:translateY(-1px) scale(.94); }
+.icon-btn:focus{ outline:none; }
+.icon-btn svg{ width:21px; height:21px; }
+
+#btnHide .i-eye-off{ display:none; }
+#btnHide.is-hidden .i-eye{ display:none; }
+#btnHide.is-hidden .i-eye-off{ display:block; }
+
+#btnTheme .i-sun{ display:none; }
+html[data-theme="dark"] #btnTheme .i-sun{ display:block; }
+html[data-theme="dark"] #btnTheme .i-moon{ display:none; }
+
+/* ==================== 主布局 ==================== */
+.wrap{
+  position:relative; z-index:2;
+  min-height:100vh;
+  display:flex; flex-direction:column;
+  justify-content:center; align-items:center;
+  gap:46px;
+  padding:88px 25px;
+  transition:opacity .45s ease, transform .45s ease;
+}
+.wrap.hidden{
+  opacity:0; transform:scale(.985); pointer-events:none;
+}
+
+.main-content{
+  width:100%;
+  display:flex; flex-direction:column;
+  align-items:center;
+  gap:46px;
+}
+
+/* ==================== 卡片 ==================== */
+.card,.site{
+  background:var(--card-bg);
+  border:1px solid var(--card-border);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(var(--blur)) saturate(160%);
+  -webkit-backdrop-filter:blur(var(--blur)) saturate(160%);
+  transform-origin:center;
+  transition:background .4s ease, border-color .4s ease, box-shadow .4s ease,
+             color .22s ease, transform .44s ease-out, filter .44s ease-out,
+             padding .3s ease, max-width .3s ease, width .3s ease,
+             gap .3s ease, min-height .3s ease;
+}
+@media (hover: hover){.card:hover{ transform:scale(1.012); }}
+.card:active{ transform:scale(1.012); }
+@media (hover: hover){.site:hover{ filter:brightness(.94); transform:scale(1.012); }}
+.site:active{ filter:brightness(.94);transform:scale(1.012); }
+.card:focus,.card:focus-visible,
+.site:focus,.site:focus-visible{ outline:none; }
+
+/* ==================== Hero ==================== */
+.hero{
+  display:flex; flex-direction:column;
+  align-items:center; text-align:center;
+  gap:14px;
+  text-shadow:0 1px 10px rgba(0,0,0,.28);
+}
+.logo{
+  width:128px; height:128px;
+  border-radius:50%; object-fit:cover; display:block;
+  box-shadow:0 10px 30px rgba(20,20,30,.22), 0 3px 10px rgba(20,20,30,.22);
+}
+html[data-theme="dark"] .logo{
+  box-shadow:0 12px 34px rgba(0,0,0,.4), 0 3px 12px rgba(0,0,0,.4);
+  filter:brightness(.88);
+}
+.name{
+  margin:0; font-size:clamp(23px,2.7vw,29px);
+  font-weight:650; letter-spacing:-.6px;
+}
+.bio{
+  margin:0; max-width:36ch; font-size:15px; line-height:1.7; color:var(--text-dim);
+}
+
+/* ==================== 社交（保持一行） ==================== */
+.socials{
+  display:flex; flex-wrap:nowrap;
+  justify-content:center;
+  gap:8px; margin-top:4px;
+}
+.social{
+  width:42px; height:42px; border-radius:50%;
+  display:grid; place-items:center; flex:none;
+  color:var(--text-dim); background:transparent;
+  text-decoration:none;
+  transition:color .18s ease;
+  will-change:color;
+}
+.social svg{ width:24px; height:24px; }
+html[data-theme="light"] .social:hover{ color:rgba(69,70,78,.96); }
+html[data-theme="dark"]  .social:hover{ color:rgba(220,222,229,.96); }
+.social:focus,.social:focus-visible{ outline:none; }
+
+@media (max-width: 400px){
+  .socials{ gap:5px; }
+  .social{ width:34px; height:34px; }
+  .social svg{ width:19px; height:19px; }
+}
+
+.social-wrap{
+  position:relative;
+  display:flex; align-items:center; justify-content:center;
+  flex:none;
+}
+
+/* 二维码气泡 */
+.qr-bubble{
+  position:absolute; top:calc(100% + 12px); left:50%;
+  transform:translateX(-50%) translateY(-4px);
+  width:176px; padding:12px;
+  background:rgba(255,255,255,.94);
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:14px;
+  box-shadow:0 10px 28px rgba(20,20,30,.18);
+  backdrop-filter:blur(20px) saturate(160%);
+  -webkit-backdrop-filter:blur(20px) saturate(160%);
+  text-align:center;
+  opacity:0; visibility:hidden;
+  transition:opacity .22s ease, transform .22s ease, visibility .22s;
+  z-index:50; pointer-events:none;
+}
+html[data-theme="dark"] .qr-bubble{
+  background:rgba(30,31,38,.94);
+  border-color:rgba(255,255,255,.08);
+  box-shadow:0 10px 28px rgba(0,0,0,.5);
+}
+.qr-bubble.show{
+  opacity:1; visibility:visible;
+  transform:translateX(-50%) translateY(0);
+  pointer-events:auto;
+}
+.qr-tip{
+  font-size:13px; font-weight:500; line-height:1.5;
+  margin-bottom:8px; color:var(--text); word-break:break-all;
+}
+.qr-placeholder{
+  display:block; width:100%; aspect-ratio:1/1;
+  object-fit:cover; border-radius:8px;
+  background:rgba(69,70,78,0);
+}
+html[data-theme="dark"] .qr-placeholder{ background:rgba(220,222,229,0); }
+.qr-copy{
+  display:block; margin:0 auto 4px; padding:0;
+  font-family:inherit; font-size:12px; line-height:1.4;
+  color:var(--text-dim); background:transparent; border:none;
+  text-decoration:underline; text-underline-offset:2px;
+}
+.qr-copy:hover{ color:var(--text); }
+.qr-copy:focus{ outline:none; }
+.qr-copy:disabled{
+  text-decoration:none; color:var(--text-dim);
+  opacity:.7; pointer-events:none;
+}
+
+/* ==================== 格言 + 时间 ==================== */
+.row2{
+  width:100%; max-width:720px;
+  display:grid; grid-template-columns:1fr 1fr; gap:30px;
+  transition:max-width .3s ease, gap .3s ease;
+}
+.clock-card,.quote-card{
+  position:relative;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  gap:10px; text-align:center; min-height:190px;
+  /* transition:padding .3s ease, min-height .3s ease; */
+}
+
+/* 装饰线：相对卡片中心定位，卡片高度变化时跟随 */
+.clock-card::before,
+.quote-card::before{
+  content:""; position:absolute;
+  top:50%; left:50%;
+  transform:translate(-50%, calc(-1 * var(--deco-offset)));
+  width:27px; height:4px; border-radius:3px;
+  background:var(--accent);
+}
+
+.clock-card{ padding:34px 28px; }
+.quote-card{ padding:46px 28px 34px; align-items:stretch; }
+
+.quote-text{
+  width:100%; margin:0; font-size:18px; font-weight:500;
+  line-height:1.75; text-align:left; color:var(--text);
+}
+.quote-author{
+  width:100%; font-size:18px; font-weight:600;
+  letter-spacing:.2px; text-align:right; color:var(--text);
+}
+.clock-date{
+  font-size:20px; font-weight:500; letter-spacing:.2px; color:var(--text-dim);
+  white-space:nowrap;
+}
+.clock-weekday{ display:inline; }
+.clock-time{
+  font-size:clamp(30px,4.6vw,42px);
+  font-weight:600; line-height:1; letter-spacing:.5px;
+  font-variant-numeric:tabular-nums;
+}
+
+/* ==================== 网站导航 ==================== */
+.sites{
+  width:100%; max-width:720px;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:28px;
+  justify-content:center;
+  transition:max-width .3s ease, gap .3s ease;
+}
+.site{
+  display:flex; align-items:center; justify-content:center;
+  gap:8px; min-height:104px; padding:18px 16px;
+  border-radius:20px; color:var(--text); text-decoration:none;
+  overflow:hidden;
+  /* transition:transform .22s ease, filter .22s ease,
+             padding .3s ease, gap .3s ease, min-height .3s ease, width .3s ease; */
+}
+.site svg{ width:32px; height:32px; flex:none; transition:width .3s ease, height .3s ease; }
+.site-name{
+  font-size:18px; font-weight:500; letter-spacing:.2px;
+  white-space:nowrap;
+  overflow:hidden;
+  min-width:0;
+  transition:font-size .3s ease;
+}
+.site.text-hidden .site-name{ display:none; }
+
+/* ==================== 聚焦模式：标题 + 切换按钮 ==================== */
+.focus-title{
+  display:none;
+  position:fixed; top:72px; left:50%;
+  transform:translateX(-50%) translateY(-6px);
+  z-index:25;
+  font-size:20px; font-weight:600;
+  letter-spacing:.5px; color:var(--text);
+  text-shadow:0 1px 10px rgba(0,0,0,.22);
+  white-space:nowrap;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity .28s ease, transform .28s ease;
+}
+
+.focus-toggle{
+  display:none;
+  position:fixed;
+  bottom:32px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:25;
+  width:52px; height:52px;
+  padding:0;
+  border:1px solid var(--card-border);
+  border-radius:50%;
+  background:var(--card-bg);
+  backdrop-filter:blur(20px) saturate(160%);
+  -webkit-backdrop-filter:blur(20px) saturate(160%);
+  box-shadow:var(--shadow);
+  color:var(--text);
+  align-items:center; justify-content:center;
+  cursor:none;
+  transition:transform .2s ease-out, filter .4s ease-out;
+}
+@media (hover: hover){.focus-toggle:hover{ transform:translateX(-50%) scale(1.05); filter:brightness(.96); }}
+.focus-toggle:active{ transform:translateX(-50%) scale(1.05); }
+.focus-toggle:focus{ outline:none; }
+.focus-toggle svg{
+  width:22px; height:22px;
+  pointer-events:none;
+}
+.focus-toggle .i-circle{ display:none; }
+.layout-focus.focus-show-cards .focus-toggle .i-bars{ display:none; }
+.layout-focus.focus-show-cards .focus-toggle .i-circle{ display:block; }
+
+/* ==================== 高度降级：左右布局 ==================== */
+.layout-side .wrap{
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+  gap:32px;
+  padding:70px 25px;
+}
+.layout-side .hero{
+  flex:0 0 auto;
+  max-width:280px;
+}
+.layout-side .main-content{
+  flex:0 1 auto;
+  width:auto;
+  gap:24px;
+}
+.layout-side .row2{ gap:20px; }
+.layout-side .sites{ gap:20px; }
+
+/* ==================== 宽度降级 档1：固定宽度 ==================== */
+.width-1 .row2{ max-width:509px; gap:22px; }
+.width-1 .sites{
+  max-width:none;
+  grid-template-columns:repeat(3, 155px);
+  gap:22px;
+}
+.width-1 .clock-card{ padding:30px 20px; }
+.width-1 .quote-card{ padding:40px 20px 28px; }
+.width-1 .site{ padding:16px 12px; min-height:96px; }
+.width-1 .site svg{ width:28px; height:28px; }
+.width-1 .site-name{ font-size:17px; }
+.width-1 .clock-weekday{ display:none; }
+.width-1{ --deco-offset: 64px; }
+
+/* ==================== 宽度降级 档2：固定宽度、隐藏格言 ==================== */
+.width-2 .row2{ max-width:441px; grid-template-columns:1fr; gap:0; }
+.width-2 .quote-card{ display:none; }
+.width-2 .clock-card{ padding:30px 20px; width:100%; }
+.width-2 .sites{
+  max-width:none;
+  grid-template-columns:repeat(3, 135px);
+  gap:18px;
+}
+.width-2 .clock-weekday{ display:inline; }
+.width-2 .site{ padding:14px 10px; min-height:88px; }
+.width-2 .site svg{ width:26px; height:26px; }
+.width-2 .site-name{ font-size:16px; }
+.width-2{ --deco-offset: 60px; }
+
+/* ==================== 宽度降级 档3：相对宽度、隐藏格言与文字 ==================== */
+.width-3 .row2{
+  max-width:380px;
+  min-width:276px;
+  grid-template-columns:1fr;
+  gap:0;
+}
+.width-3 .quote-card{ display:none; }
+.width-3 .clock-card{
+  width:100%;
+  padding:24px 16px;
+  min-height:150px;
+}
+.width-3 .clock-time{ font-size:clamp(26px,4vw,34px); }
+.width-3 .clock-date{ font-size:16px; }
+.width-3 .sites{
+  max-width:380px;
+  min-width:276px;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:14px;
+}
+.width-3 .site{
+  padding:18px 8px;
+  min-height:76px;
+}
+.width-3 .site svg{ width:28px; height:28px; }
+.width-3{ --deco-offset: 54px; }
+
+/* ==================== 聚焦模式（额外档） ==================== */
+.layout-focus .wrap{
+  display:grid;
+  grid-template-areas: "content";
+  place-items: center;
+  padding: 120px 20px 100px;
+  gap: 0;
+}
+.layout-focus .focus-toggle{ display:flex; }
+
+/* 信息页 / 卡片页重叠在同一个格子，淡入淡出 */
+.layout-focus .hero,
+.layout-focus .main-content{
+  grid-area: content;
+  width:100%;
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+.layout-focus .hero{
+  display:flex;
+  max-width:440px;
+}
+.layout-focus .main-content{
+  display:flex;
+  max-width:440px;
+  gap:16px;
+}
+
+/* 默认：信息页可见，卡片页隐藏 */
+.layout-focus:not(.focus-show-cards) .main-content{
+  opacity:0;
+  transform:scale(.96);
+  pointer-events:none;
+}
+.layout-focus.focus-show-cards .hero{
+  opacity:0;
+  transform:scale(.96);
+  pointer-events:none;
+}
+
+/* 标题：随卡片页一起显示 */
+.layout-focus .focus-title{
+  display:block;
+}
+.layout-focus.focus-show-cards .focus-title{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+
+/* 聚焦卡片页内部布局 */
+.layout-focus .row2{
+  max-width:440px;
+  grid-template-columns:1fr;
+  gap:0;
+  width:100%;
+}
+.layout-focus .quote-card{ display:none; }
+.layout-focus .clock-card{
+  width:100%;
+  padding:22px 14px;
+  min-height:140px;
+}
+.layout-focus .clock-weekday{ display:inline; }
+.layout-focus .sites{
+  max-width:440px;
+  width:100%;
+  gap:10px;
+  grid-template-columns:repeat(3, minmax(0, 140px));
+  justify-content:center;
+}
+.layout-focus .site{
+  padding:12px 6px;
+  min-height:72px;
+  gap:5px;
+}
+.layout-focus .site svg{ width:26px; height:26px; }
+.layout-focus .site-name{ font-size:13px; }
+.layout-focus{ --deco-offset: 52px; }
+
+/* ==================== 额外档：高度 < 530px ==================== */
+@media (max-height: 530px){
+  .layout-focus .wrap{
+    padding-top: 75px;
+  }
+
+  .layout-focus.focus-show-cards .focus-title{
+    top: 27px;
+    transform: translateX(-50%);
+  }
+}
+
+/* ==================== 响应式兜底 ==================== */
+@media (prefers-reduced-motion: reduce){
+  *{ transition-duration:.01ms !important; animation-duration:.01ms !important; }
+}
+
+/* ==================== iframe 覆盖层 ==================== */
+.iframe-layer{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  pointer-events:none;
+}
+.iframe-wrap{
+  position:fixed;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 20px 60px rgba(0,0,0,.35);
+  border-radius:20px;
+  transform-origin:top left;
+  pointer-events:auto;
+  will-change: top, left, width, height, border-radius, opacity;
+}
+.iframe-wrap.hidden{ display:none; }
+.iframe-wrap iframe{
+  width:100%;
+  height:100%;
+  border:none;
+  display:block;
+  background:#fff;
+}
+
+.iframe-close{
+  position:fixed;
+  top:16px;
+  right:16px;
+  z-index:1001;
+  width:46px;
+  height:46px;
+  padding:0;
+  border:none;
+  border-radius:50%;
+  background:rgba(0,0,0,.5);
+  color:#fff;
+  display:grid;
+  place-items:center;
+  cursor:none;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s ease, background .2s ease, transform .2s ease;
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+.iframe-close.show{
+  opacity:1;
+  pointer-events:auto;
+}
+.iframe-close:hover{
+  background:rgba(0,0,0,.7);
+  transform:scale(1.05);
+}
+.iframe-close svg{
+  width:22px;
+  height:22px;
+  pointer-events:none;
+}
+</style>
+</head>
+<body>
+
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="cursor-dot"  id="cursorInner" aria-hidden="true"></div>
+
+<div class="bg" id="bgA"></div>
+<div class="bg" id="bgB"></div>
+<div class="veil"></div>
+
+<div class="topbar">
+  <button class="icon-btn" id="btnHide" aria-label="隐藏内容">
+    <svg class="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/>
+      <circle cx="12" cy="12" r="3"/>
+    </svg>
+    <svg class="i-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 3l18 18"/>
+      <path d="M10.6 6.2A10.9 10.9 0 0 1 12 6c6.4 0 10 6 10 6a17.7 17.7 0 0 1-3.3 3.9"/>
+      <path d="M6.6 6.7C3.8 8.5 2 12 2 12s3.6 7 10 7a9.8 9.8 0 0 0 4.4-1"/>
+      <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/>
+    </svg>
+  </button>
+
+  <button class="icon-btn" id="btnTheme" aria-label="切换深浅色">
+    <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+    </svg>
+    <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+    </svg>
+  </button>
+</div>
+
+<div class="focus-title" id="focusTitle">Sirui</div>
+<button class="focus-toggle" id="focusToggle" type="button" aria-label="切换卡片">
+  <svg class="i-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M4 7h16M4 12h16M4 17h16"/>
+  </svg>
+  <svg class="i-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <circle cx="12" cy="12" r="6"/>
+  </svg>
+</button>
+
+<main class="wrap" id="wrap">
+
+  <section class="hero">
+    <img class="logo" src="https://q1.qlogo.cn/g?b=qq&nk=843991410&s=640" alt="站点头像" />
+    <h1 class="name">Sirui</h1>
+    <p class="bio">只要思想不滑坡，办法总比困难多！</p>
+
+    <div class="socials">
+
+      <div class="social-wrap" data-type="qq">
+        <a class="social" data-url="https://qm.qq.com/q/EHDJqjJm7K" role="link" tabindex="0" aria-label="QQ">
+          <svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd">
+            <path d="M12 2.3c-3.3 0-5.6 2.4-5.6 5.6 0 .9-.2 1.5-.8 2.4C4.3 12.3 3 14.4 3 16.1c0 1.3.9 2 2.2 1.8.6-.1 1.2-.4 1.7-.8.6.3 1.4.5 2.3.5h5.6c.9 0 1.7-.2 2.3-.5.5.4 1.1.7 1.7.8 1.3.2 2.2-.5 2.2-1.8 0-1.7-1.3-3.8-2.6-5.8-.6-.9-.8-1.5-.8-2.4 0-3.2-2.3-5.6-5.6-5.6Zm-2.6 5.2a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Zm5.2 0a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/>
+          </svg>
+        </a>
+        <div class="qr-bubble" aria-hidden="true">
+          <div class="qr-tip">使用 QQ 扫码</div>
+          <img class="qr-placeholder" src="https://img.siruis.top/social/qrcode_qqgroup_join.png" alt="QQ 二维码" />
+        </div>
+      </div>
+
+      <div class="social-wrap" data-type="wechat">
+        <a class="social" data-url="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzkzODIyNzUyMw==&scene=110#wechat_redirect" role="link" tabindex="0" aria-label="微信">
+          <svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd">
+            <path d="M9.4 4.3C5.8 4.3 2.9 6.6 2.9 9.5s2.9 5.2 6.5 5.2c.7 0 1.3-.1 1.9-.3l2.3 1.1-.7-2.2c1.1-1 1.9-2.3 1.9-3.8 0-2.9-2.9-5.2-6.4-5.2ZM7.2 7.8a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1Zm4.4 0a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1Z"/>
+            <path d="M16.1 10.2c-2.9 0-5.2 2-5.2 4.4s2.3 4.4 5.2 4.4c.5 0 1-.1 1.5-.2l2 1-.6-1.9c1-.8 1.6-2 1.6-3.3 0-2.4-2.3-4.4-5.2-4.4Zm-1.9 3a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8Zm3.8 0a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8Z"/>
+          </svg>
+        </a>
+        <div class="qr-bubble" aria-hidden="true">
+          <div class="qr-tip">使用微信扫码</div>
+          <img class="qr-placeholder" src="https://img.siruis.top/social/qrcode_wx_sub.png" alt="微信二维码" />
+          <button class="qr-copy" type="button">复制链接</button>
+        </div>
+      </div>
+
+      <a class="social" data-url="https://github.com/Siruirui" role="link" tabindex="0" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+        </svg>
+      </a>
+
+      <a class="social" data-url="https://space.bilibili.com/34344911" role="link" tabindex="0" aria-label="哔哩哔哩">
+        <svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd">
+          <path d="M6.7 4.1a.85.85 0 0 1 1.2.1L9.6 6.3h4.8l1.7-2.1a.85.85 0 1 1 1.3 1.1L16.2 6.3H17.6A3.4 3.4 0 0 1 21 9.7v6.4a3.4 3.4 0 0 1-3.4 3.4H6.4A3.4 3.4 0 0 1 3 16.1V9.7a3.4 3.4 0 0 1 3.4-3.4h1.3L6.6 5.3a.85.85 0 0 1 .1-1.2ZM9.4 10.4a1.15 1.15 0 1 0 0 2.3 1.15 1.15 0 0 0 0-2.3Zm5.2 0a1.15 1.15 0 1 0 0 2.3 1.15 1.15 0 0 0 0-2.3Z"/>
+        </svg>
+      </a>
+
+      <a class="social" data-url="http://www.coolapk.com/u/3189548" role="link" tabindex="0" aria-label="酷安">
+        <svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd">
+          <path d="M5.6 2.8h12.8a2.8 2.8 0 0 1 2.8 2.8v12.8a2.8 2.8 0 0 1-2.8 2.8H5.6a2.8 2.8 0 0 1-2.8-2.8V5.6a2.8 2.8 0 0 1 2.8-2.8ZM13.3 7a5 5 0 1 0 0 10h.5a1 1 0 0 0 0-2h-.5a3 3 0 1 1 0-6h.5a1 1 0 0 0 0-2h-.5Z"/>
+        </svg>
+      </a>
+
+      <a class="social" data-url="snssdk1128://user/profile/30224621381" role="link" tabindex="0" aria-label="抖音">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+        </svg>
+      </a>
+
+    </div>
+  </section>
+
+  <div class="main-content">
+
+    <div class="row2">
+
+      <section class="card quote-card" tabindex="0">
+        <p class="quote-text">我们所经历的每个平凡的日常，也许就是连续发生的奇迹。</p>
+        <span class="quote-author">——「 日常 」</span>
+      </section>
+
+      <section class="card clock-card" tabindex="0">
+        <div class="clock-date">
+          <span id="clockDateMain">加载中…</span>
+          <span class="clock-weekday" id="clockWeekday"></span>
+        </div>
+        <div class="clock-time" id="clockTime">00:00:00</div>
+      </section>
+
+    </div>
+
+    <div class="sites">
+
+      <a class="site" data-url="https://siruis.top" role="link" tabindex="0" aria-label="博客网站">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+        </svg>
+        <span class="site-name">博客网站</span>
+      </a>
+
+      <a class="site" data-url="https://share.siruis.top" role="link" tabindex="0" aria-label="文件分享">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
+        </svg>
+        <span class="site-name">文件分享</span>
+      </a>
+
+      <a class="site" data-url="https://siruis.top/score" role="link" tabindex="0" aria-label="我的乐谱">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M3 5h18v1.6H3V5zm0 3.6h18v1.6H3V8.6zm0 3.6h18v1.6H3v-1.6zm0 3.6h18v1.6H3v-1.6z"/>
+          <circle cx="7" cy="5.8" r="2"/>
+          <circle cx="13" cy="9.4" r="2"/>
+          <circle cx="17" cy="13" r="2"/>
+        </svg>
+        <span class="site-name">我的乐谱</span>
+      </a>
+
+      <a class="site" data-url="https://siruis.top/player" role="link" tabindex="0" aria-label="音乐面板">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/>
+        </svg>
+        <span class="site-name">音乐面板</span>
+      </a>
+
+      <a class="site" data-url="https://siruis.top" role="link" tabindex="0" aria-label="作品展示">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+        </svg>
+        <span class="site-name">作品展示</span>
+      </a>
+
+      <a class="site" data-url="https://siruis.top" role="link" tabindex="0" aria-label="打赏一下">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        <span class="site-name">打赏一下</span>
+      </a>
+
+    </div>
+
+  </div>
+
+</main>
+
+<!-- iframe 覆盖层 -->
+<div class="iframe-layer" id="iframeLayer"></div>
+
+<!-- 关闭按钮 -->
+<button class="iframe-close" id="iframeClose" aria-label="关闭">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 6L6 18M6 6l12 12"/>
+  </svg>
+</button>
+
+<script>
+/* ==================== 全局禁用右键 ==================== */
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+/* ==================== 剪贴板 ==================== */
+function copyToClipboard(text){
+  if (navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(text).catch(() => fallbackCopy(text));
+  } else {
+    fallbackCopy(text);
+  }
+}
+function fallbackCopy(text){
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.left = '-9999px';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); } catch (e){}
+  document.body.removeChild(ta);
+}
+
+/* ==================== 网站卡片：iframe 覆盖 + FLIP 展开动画 ==================== */
+(function initSiteIframes(){
+  const layer = document.getElementById('iframeLayer');
+  const closeBtn = document.getElementById('iframeClose');
+  if (!layer) return;
+
+  // 每个卡片对应一个缓存的 iframe，懒创建
+  const cache = new Map();   // cardEl -> iframeWrap
+  let current = null;        // 当前展开的 wrap
+  let currentCard = null;    // 当前展开对应的卡片
+  let animating = false;
+
+  const EASE = 'cubic-bezier(.22,.61,.36,1)';
+  const DURATION = 480;
+
+  function createWrap(url){
+    const wrap = document.createElement('div');
+    wrap.className = 'iframe-wrap hidden';
+
+    const iframe = document.createElement('iframe');
+    iframe.src = url;
+    iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+    iframe.setAttribute('loading', 'eager');
+    wrap.appendChild(iframe);
+
+    layer.appendChild(wrap);
+    return wrap;
+  }
+
+  function openFromCard(card){
+    if (animating) return;
+
+    const url = card.getAttribute('data-url');
+    if (!url) return;
+
+    // 同一张卡片已经打开，忽略
+    if (current && currentCard === card) return;
+
+    // 懒创建 + 缓存
+    let wrap = cache.get(card);
+    if (!wrap){
+      wrap = createWrap(url);
+      cache.set(card, wrap);
+    }
+
+    // 隐藏其他已缓存的 wrap
+    cache.forEach((w) => {
+      if (w !== wrap) w.classList.add('hidden');
+    });
+
+    const rect = card.getBoundingClientRect();
+
+    // First：初始位置为卡片位置
+    wrap.style.transition = 'none';
+    wrap.style.top = rect.top + 'px';
+    wrap.style.left = rect.left + 'px';
+    wrap.style.width = rect.width + 'px';
+    wrap.style.height = rect.height + 'px';
+    wrap.style.borderRadius = '20px';
+    wrap.style.opacity = '1';
+    wrap.classList.remove('hidden');
+
+    // 强制 reflow
+    void wrap.offsetWidth;
+
+    // Last：展开到全屏
+    wrap.style.transition =
+      `top ${DURATION}ms ${EASE}, ` +
+      `left ${DURATION}ms ${EASE}, ` +
+      `width ${DURATION}ms ${EASE}, ` +
+      `height ${DURATION}ms ${EASE}, ` +
+      `border-radius ${DURATION}ms ${EASE}`;
+    wrap.style.top = '0';
+    wrap.style.left = '0';
+    wrap.style.width = window.innerWidth + 'px';
+    wrap.style.height = window.innerHeight + 'px';
+    wrap.style.borderRadius = '0';
+
+    current = wrap;
+    currentCard = card;
+
+    if (closeBtn) closeBtn.classList.add('show');
+  }
+
+  function close(){
+    if (!current || !currentCard || animating) return;
+    animating = true;
+
+    const wrap = current;
+    const rect = currentCard.getBoundingClientRect();
+
+    wrap.style.transition =
+      `top ${DURATION}ms ${EASE}, ` +
+      `left ${DURATION}ms ${EASE}, ` +
+      `width ${DURATION}ms ${EASE}, ` +
+      `height ${DURATION}ms ${EASE}, ` +
+      `border-radius ${DURATION}ms ${EASE}, ` +
+      `opacity ${DURATION * 0.6}ms ease ${DURATION * 0.4}ms`;
+    wrap.style.top = rect.top + 'px';
+    wrap.style.left = rect.left + 'px';
+    wrap.style.width = rect.width + 'px';
+    wrap.style.height = rect.height + 'px';
+    wrap.style.borderRadius = '20px';
+    wrap.style.opacity = '0';
+
+    if (closeBtn) closeBtn.classList.remove('show');
+
+    setTimeout(() => {
+      wrap.classList.add('hidden');
+      wrap.style.opacity = '';
+      current = null;
+      currentCard = null;
+      animating = false;
+    }, DURATION + 60);
+  }
+
+  // 卡片点击
+  document.querySelectorAll('.site[data-url]').forEach((card) => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      openFromCard(card);
+    });
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        openFromCard(card);
+      }
+    });
+  });
+
+  // 关闭
+  if (closeBtn){
+    closeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      close();
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && current){
+      close();
+    }
+  });
+
+  // 窗口尺寸变化时，如果 iframe 全屏展开，同步尺寸
+  window.addEventListener('resize', () => {
+    if (current && !animating){
+      current.style.width = window.innerWidth + 'px';
+      current.style.height = window.innerHeight + 'px';
+    }
+  });
+})();
+
+/* ==================== 普通社交图标跳转 ==================== */
+(function initSocialLinks(){
+  document.querySelectorAll('.socials > .social[data-url]').forEach((el) => {
+    const open = () => {
+      const win = window.open(el.getAttribute('data-url'), '_blank');
+      if (win) win.opener = null;
+    };
+    el.addEventListener('click', (e) => { e.preventDefault(); open(); });
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(); }
+    });
+  });
+})();
+
+/* ==================== QQ / 微信 气泡 ==================== */
+(function initQrBubbles(){
+  document.querySelectorAll('.social-wrap[data-type]').forEach((wrap) => {
+    const icon   = wrap.querySelector('.social');
+    const bubble = wrap.querySelector('.qr-bubble');
+    const copyBtn = bubble ? bubble.querySelector('.qr-copy') : null;
+    const type   = wrap.getAttribute('data-type');
+    const url    = icon.getAttribute('data-url');
+
+    let showTimer = null;
+    let hideTimer = null;
+
+    function showBubble(){
+      clearTimeout(hideTimer);
+      if (bubble) bubble.classList.add('show');
+    }
+    function hideBubble(){
+      hideTimer = setTimeout(() => {
+        if (bubble) bubble.classList.remove('show');
+      }, 140);
+    }
+
+    wrap.addEventListener('mouseenter', () => {
+      clearTimeout(showTimer);
+      clearTimeout(hideTimer);
+      showTimer = setTimeout(showBubble, 1000);
+    });
+    wrap.addEventListener('mouseleave', () => {
+      clearTimeout(showTimer);
+      hideBubble();
+    });
+
+    if (bubble){
+      bubble.addEventListener('mouseenter', () => clearTimeout(hideTimer));
+      bubble.addEventListener('mouseleave', hideBubble);
+    }
+
+    icon.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (type === 'wechat'){
+        const ua = navigator.userAgent.toLowerCase();
+        const isWechatBrowser = /micromessenger/.test(ua);
+        if (isWechatBrowser){
+          const win = window.open(url, '_blank');
+          if (win) win.opener = null;
+          return;
+        }
+        copyToClipboard(url);
+        showBubble();
+        if (copyBtn){
+          copyBtn.textContent = '已复制链接，可在微信打开';
+          copyBtn.disabled = true;
+        }
+      } else {
+        const win = window.open(url, '_blank');
+        if (win) win.opener = null;
+      }
+    });
+
+    icon.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        icon.click();
+      }
+    });
+
+    if (copyBtn){
+      copyBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        copyToClipboard(url);
+        copyBtn.textContent = '已复制链接，可在微信打开';
+        copyBtn.disabled = true;
+      });
+    }
+  });
+})();
+
+/* ==================== 光标 ==================== */
+(function initCursor(){
+  const ring = document.getElementById('cursorRing');
+  const dot  = document.getElementById('cursorInner');
+  if (!ring || !dot) return;
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+
+  let mx = window.innerWidth / 2;
+  let my = window.innerHeight / 2;
+  let rx = mx, ry = my;
+  let visible = false;
+
+  function show(){
+    if (!visible){
+      visible = true;
+      ring.style.opacity = '1';
+      dot.style.opacity = '1';
+    }
+  }
+  function hide(){
+    visible = false;
+    ring.style.opacity = '0';
+    dot.style.opacity = '0';
+  }
+
+  document.addEventListener('pointermove', (e) => {
+    mx = e.clientX;
+    my = e.clientY;
+    show();
+  }, { passive: true });
+  document.addEventListener('mouseleave', hide);
+  document.addEventListener('mouseenter', show);
+
+  function loop(){
+    dot.style.transform = `translate(${mx}px, ${my}px)`;
+    rx += (mx - rx) * 0.25;
+    ry += (my - ry) * 0.25;
+    ring.style.transform = `translate3d(${rx}px, ${ry}px, 0)`;
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+
+/* ==================== 背景轮播（JSON + 预加载） ==================== */
+const BG_LIST_URL = '/bglist.json';
+const SLIDE_INTERVAL = 8000;
+
+let IMAGES = [];
+let BG_BASE_URL = '';
+let layers = [];
+let front = 0;
+let currentIndex = 0;
+const preloadedMap = new Map();
+
+function buildImageUrl(item){
+  if (!item) return '';
+  const path = typeof item === 'string' ? item : (item.url || '');
+  if (!path) return '';
+  if (/^https?:\/\//i.test(path)) return path;
+  const base = BG_BASE_URL ? BG_BASE_URL.replace(/\/+$/, '') + '/' : '';
+  return base + path.replace(/^\/+/, '');
+}
+
+function preloadImage(url){
+  if (!url) return Promise.resolve(url);
+  if (preloadedMap.has(url)){
+    const img = preloadedMap.get(url);
+    if (img.complete) return Promise.resolve(url);
+    return new Promise(resolve => {
+      img.addEventListener('load', () => resolve(url), { once: true });
+      img.addEventListener('error', () => resolve(url), { once: true });
+    });
+  }
+  const img = new Image();
+  const p = new Promise(resolve => {
+    img.addEventListener('load', () => resolve(url), { once: true });
+    img.addEventListener('error', () => resolve(url), { once: true });
+  });
+  img.src = url;
+  preloadedMap.set(url, img);
+  return p;
+}
+
+async function showImage(index){
+  const url = buildImageUrl(IMAGES[index]);
+  if (!url) return;
+  await preloadImage(url);
+  const back = 1 - front;
+  layers[back].style.backgroundImage = `url("${url}")`;
+  layers[back].style.opacity = '1';
+  layers[front].style.opacity = '0';
+  front = back;
+}
+
+function preloadNext(){
+  if (!IMAGES.length) return;
+  const nextIndex = (currentIndex + 1) % IMAGES.length;
+  preloadImage(buildImageUrl(IMAGES[nextIndex]));
+}
+
+async function startSlideshow(){
+  if (!IMAGES.length) return;
+  currentIndex = 0;
+  await preloadImage(buildImageUrl(IMAGES[0]));
+  await showImage(0);
+  preloadNext();
+  setInterval(async () => {
+    currentIndex = (currentIndex + 1) % IMAGES.length;
+    await showImage(currentIndex);
+    preloadNext();
+  }, SLIDE_INTERVAL);
+}
+
+(async function initBackground(){
+  layers = [document.getElementById('bgA'), document.getElementById('bgB')];
+  try {
+    const res = await fetch(BG_LIST_URL, { cache: 'no-cache' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    if (Array.isArray(data)) {
+      IMAGES = data;
+    } else if (data && Array.isArray(data.images)) {
+      IMAGES = data.images;
+      BG_BASE_URL = data.baseUrl || '';
+    }
+    if (IMAGES.length) await startSlideshow();
+  } catch (err) {
+    console.warn('背景列表加载失败', err);
+  }
+})();
+
+/* ==================== 时钟 ==================== */
+(function initClock(){
+  const timeEl = document.getElementById('clockTime');
+  const dateMainEl = document.getElementById('clockDateMain');
+  const weekdayEl = document.getElementById('clockWeekday');
+  const WEEK = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+  const pad = n => String(n).padStart(2, '0');
+
+  function tick(){
+    const d = new Date();
+    timeEl.textContent = `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+    dateMainEl.textContent = `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日`;
+    weekdayEl.textContent = ' ' + WEEK[d.getDay()];
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+
+/* ==================== 隐藏 / 显示 ==================== */
+(function initHideToggle(){
+  const wrap = document.getElementById('wrap');
+  const btn  = document.getElementById('btnHide');
+
+  btn.addEventListener('click', () => {
+    const hidden = wrap.classList.toggle('hidden');
+    btn.classList.toggle('is-hidden', hidden);
+    btn.setAttribute('aria-label', hidden ? '显示内容' : '隐藏内容');
+  });
+})();
+
+/* ==================== 主题切换 ==================== */
+(function initTheme(){
+  const root = document.documentElement;
+  const btn  = document.getElementById('btnTheme');
+  const KEY  = 'nav-theme';
+
+  function apply(theme){
+    root.dataset.theme = theme;
+    try { localStorage.setItem(KEY, theme); } catch(e){}
+  }
+
+  let saved = null;
+  try { saved = localStorage.getItem(KEY); } catch(e){}
+  apply(saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+
+  btn.addEventListener('click', () => {
+    apply(root.dataset.theme === 'dark' ? 'light' : 'dark');
+  });
+})();
+
+/* ==================== 响应式布局 + 聚焦模式 ==================== */
+(function initResponsive(){
+  const root = document.documentElement;
+  const focusToggle = document.getElementById('focusToggle');
+  const focusTitle = document.getElementById('focusTitle');
+
+  let focusCardsVisible = false;
+
+  const BP = {
+    heightSide: 960,
+    heightFocus: 600,
+    widthFocus: 520
+  };
+
+  /* 网站文字溢出检测：溢出则直接隐藏文字，不出现省略号 */
+  function updateSiteTextVisibility(){
+    const sites = Array.from(document.querySelectorAll('.sites .site'));
+    if (!sites.length) return;
+
+    sites.forEach(site => site.classList.remove('text-hidden'));
+    void document.body.offsetWidth;
+
+    sites.forEach(site => {
+      const name = site.querySelector('.site-name');
+      if (!name) return;
+      // 测量文字自然宽度是否超出容器
+      if (name.scrollWidth > name.clientWidth + 1){
+        site.classList.add('text-hidden');
+      }
+    });
+  }
+
+  function updateFocusButton(){
+    if (!focusToggle) return;
+    if (root.classList.contains('layout-focus')){
+      focusToggle.style.display = 'flex';
+    } else {
+      focusToggle.style.display = 'none';
+    }
+  }
+
+  function updateLayout(){
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+
+    root.classList.remove('layout-side', 'layout-focus', 'width-1', 'width-2', 'width-3');
+
+    const inSideHeightRange = (vh < BP.heightSide) && (vh >= BP.heightFocus);
+    const widthFocusThreshold = inSideHeightRange ? 640 : BP.widthFocus;
+    const isFocus = (vh < BP.heightFocus) || (vw < widthFocusThreshold);
+
+    if (isFocus){
+      root.classList.add('layout-focus');
+      root.classList.toggle('focus-show-cards', focusCardsVisible);
+      updateFocusButton();
+      requestAnimationFrame(updateSiteTextVisibility);
+      return;
+    }
+
+    root.classList.remove('focus-show-cards');
+
+    if (vh < BP.heightSide){
+      root.classList.add('layout-side');
+    }
+
+    const isSide = vh < BP.heightSide;
+    let thresholds;
+    if (isSide){
+      // 左右布局：hero 280 + 卡片区，阈值相应更大
+      thresholds = { l1: 1050, l2: 920, l3: 820 };
+    } else {
+      // 垂直布局
+      thresholds = { l1: 850, l2: 720, l3: 660 };
+    }
+
+    if (vw < thresholds.l3){
+      root.classList.add('width-3');
+    } else if (vw < thresholds.l2){
+      root.classList.add('width-2');
+    } else if (vw < thresholds.l1){
+      root.classList.add('width-1');
+    }
+
+    updateFocusButton();
+    requestAnimationFrame(updateSiteTextVisibility);
+  }
+
+  if (focusToggle){
+    focusToggle.addEventListener('click', () => {
+      focusCardsVisible = !focusCardsVisible;
+      root.classList.toggle('focus-show-cards', focusCardsVisible);
+      requestAnimationFrame(updateSiteTextVisibility);
+    });
+  }
+
+  if (focusTitle){
+    const nameEl = document.querySelector('.name');
+    if (nameEl) focusTitle.textContent = nameEl.textContent.trim();
+  }
+
+  let rafId = null;
+  function scheduleUpdate(){
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(() => {
+      updateLayout();
+      rafId = null;
+    });
+  }
+
+  window.addEventListener('resize', scheduleUpdate);
+  window.addEventListener('orientationchange', scheduleUpdate);
+
+  updateLayout();
+})();
+</script>
+</body>
+</html>
